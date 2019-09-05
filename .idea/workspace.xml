@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="827ce0d0-08f1-4868-ad8b-28c51e8fed4d" name="Default Changelist" comment="" />
+    <list default="true" id="827ce0d0-08f1-4868-ad8b-28c51e8fed4d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/EnableVerify.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/VerifyEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/VerifyScan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/config/VerifyInterpreterRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/exception/BaseException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/exception/InvalidDataDefinitionException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/handle/GlobalExceptionHandle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/AbstractPackageScanner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/HttpStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/architect.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/validate/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/Verify.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/Verify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/aspect/VerifyMethodArgumentResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/aspect/VerifyMethodArgumentResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/target/classes/com/coder/framework/validate/annotation/Verify.class" beforeDir="false" afterPath="$PROJECT_DIR$/validate/target/classes/com/coder/framework/validate/annotation/Verify.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/target/classes/com/coder/framework/validate/aspect/VerifyMethodArgumentResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/validate/target/classes/com/coder/framework/validate/aspect/VerifyMethodArgumentResolver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/validate/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/validate/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/validate/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/target/validate-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/validate/target/validate-1.0-SNAPSHOT.jar" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/validate/target/" />
@@ -25,82 +53,19 @@
     <expand />
     <select />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1468071217">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="iml" value="1" />
-          <entry key="java" value="3" />
-          <entry key="xml" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="3" />
-          <entry key="XML" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="121" />
-          <entry key="xml" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="121" />
-          <entry key="XML" value="2" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/Verify.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="14" selection-start-column="14" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/aspect/VerifyMethodArgumentResolver.java">
+        <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/config/VerifyInterpreterRegistry.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="37" selection-start-line="37" selection-end-line="37" selection-end-column="7" />
+            <state relative-caret-position="432">
+              <caret line="43" column="62" lean-forward="true" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="docComment;class#VerifyMethodArgumentResolver#0" />
-                <element signature="e#921#922#0" expanded="true" />
-                <element signature="e#969#970#0" expanded="true" />
+                <element signature="docComment;class#VerifyInterpreterRegistry#0" />
+                <element signature="e#1022#1023#0" expanded="true" />
+                <element signature="e#1079#1080#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/validate/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="8" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -110,27 +75,42 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>1.5</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util.java" />
+        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/PackageScanner.java" />
+        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/PackageScannerBase.java" />
+        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/VerifyScan.java" />
         <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/Verify.java" />
+        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/AbstractPackageScanner.java" />
+        <option value="$PROJECT_DIR$/validate/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/config/VerifyAutoConfiguration.java" />
+        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/VerifyEntity.java" />
+        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/handle/GlobalExceptionAdvice.java" />
+        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/HttpStatus.java" />
+        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/exception/InvalidDataDefinitionException.java" />
+        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/exception/BaseException.java" />
         <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/EnableVerify.java" />
         <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/aspect/VerifyMethodArgumentResolver.java" />
-        <option value="$PROJECT_DIR$/validate/pom.xml" />
+        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/handle/GlobalExceptionHandle.java" />
+        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/config/VerifyInterpreterRegistry.java" />
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -151,6 +131,15 @@
           <item name="architect" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="validate" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="validate" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
       </expand>
       <select />
     </treeState>
@@ -158,8 +147,11 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -167,73 +159,63 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="architect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="architect" type="462c0819:PsiDirectoryNode" />
+              <item name="coder-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coder-framework" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="architect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="architect" type="462c0819:PsiDirectoryNode" />
+              <item name="coder-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coder-framework" type="462c0819:PsiDirectoryNode" />
               <item name="validate" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="architect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="architect" type="462c0819:PsiDirectoryNode" />
-              <item name="validate" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="architect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="architect" type="462c0819:PsiDirectoryNode" />
+              <item name="coder-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coder-framework" type="462c0819:PsiDirectoryNode" />
               <item name="validate" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="architect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="architect" type="462c0819:PsiDirectoryNode" />
+              <item name="coder-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coder-framework" type="462c0819:PsiDirectoryNode" />
               <item name="validate" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="architect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="architect" type="462c0819:PsiDirectoryNode" />
+              <item name="coder-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coder-framework" type="462c0819:PsiDirectoryNode" />
               <item name="validate" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="architect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="architect" type="462c0819:PsiDirectoryNode" />
+              <item name="coder-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coder-framework" type="462c0819:PsiDirectoryNode" />
               <item name="validate" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="coder" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="architect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="architect" type="462c0819:PsiDirectoryNode" />
+              <item name="coder-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coder-framework" type="462c0819:PsiDirectoryNode" />
               <item name="validate" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="coder" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="architect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="architect" type="462c0819:PsiDirectoryNode" />
+              <item name="coder-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coder-framework" type="462c0819:PsiDirectoryNode" />
               <item name="validate" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -241,11 +223,22 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="coder" type="462c0819:PsiDirectoryNode" />
               <item name="framework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="coder-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coder-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="validate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="coder" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
               <item name="validate" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="architect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="architect" type="462c0819:PsiDirectoryNode" />
+              <item name="coder-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coder-framework" type="462c0819:PsiDirectoryNode" />
               <item name="validate" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -257,8 +250,8 @@
               <item name="annotation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="architect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="architect" type="462c0819:PsiDirectoryNode" />
+              <item name="coder-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coder-framework" type="462c0819:PsiDirectoryNode" />
               <item name="validate" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -269,23 +262,81 @@
               <item name="validate" type="462c0819:PsiDirectoryNode" />
               <item name="aspect" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="coder-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coder-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="validate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="coder" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="validate" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="coder-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coder-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="validate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="coder" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="validate" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="coder-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coder-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="validate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="coder" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="validate" type="462c0819:PsiDirectoryNode" />
+              <item name="handle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="coder-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="coder-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="validate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="coder" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="validate" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="lombok&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567658393942" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567686557124" />
     <property name="last_opened_file_path" value="C:/Program Files/Java/jdk1.8.0_131/bin/jvisualvm.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.zeroturnaround.javarebel.idea.plugin.settings.JRebelSettingsComponent" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.coder.framework.validate.util" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -299,6 +350,102 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Application.VerifyMethodArgumentResolver">
+    <configuration name="AbstractPackageScanner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.coder.framework.validate.util.AbstractPackageScanner" />
+      <module name="validate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.coder.framework.validate.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VerifyMethodArgumentResolver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.coder.framework.validate.aspect.VerifyMethodArgumentResolver" />
+      <module name="validate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.coder.framework.validate.aspect.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Twisted Trial">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.VerifyMethodArgumentResolver" />
+        <item itemvalue="Application.AbstractPackageScanner" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -310,103 +457,351 @@
       <option name="presentableId" value="Default" />
       <updated>1567612153928</updated>
       <workItem from="1567612159407" duration="3071000" />
+      <workItem from="1567659012875" duration="20576000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3071000" />
+    <option name="totallyTimeSpent" value="23647000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="JRebel" side_tool="true" />
-      <window_info id="Image Layers" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Capture Tool" />
-      <window_info id="Designer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2496" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25226668" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="FindBugs-IDEA" />
-      <window_info anchor="bottom" id="Run with VisualVM" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Messages" weight="0.32962137" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="JRebel Executor" />
-      <window_info anchor="bottom" id="JRebel Console" side_tool="true" />
-      <window_info anchor="bottom" id="Debug with VisualVM" />
+      <window_info id="Designer" order="2" />
+      <window_info id="JRebel" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info anchor="bottom" id="Spring" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32962137" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27282852" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Mybatis datasource" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" weight="0.3296" />
-      <window_info anchor="right" id="Database" weight="0.3296" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.2271715" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Run with VisualVM" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="bottom" id="JRebel Executor" order="14" />
+      <window_info anchor="bottom" id="JRebel Console" order="15" side_tool="true" />
+      <window_info anchor="bottom" id="Debug with VisualVM" order="16" />
+      <window_info anchor="right" id="Maven" weight="0.3296" />
+      <window_info anchor="right" id="SciView" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Mybatis datasource" order="5" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="6" weight="0.3296" />
+      <window_info anchor="right" id="Database" order="7" weight="0.3296" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/architect.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/Verify.java">
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        <state relative-caret-position="401">
+          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/EnableVerify.java">
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/PackageScannerBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="378">
+          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#PackageScannerBase#0" />
+            <element signature="e#705#706#0" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/io/File.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="1284" column="18" selection-start-line="1284" selection-start-column="18" selection-end-line="1284" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/io/FileFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.1.8.RELEASE/spring-context-5.1.8.RELEASE.jar!/org/springframework/context/annotation/Import.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/VerifyScan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="43" column="25" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#VerifyScan#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="8" selection-end-column="30" />
+        <state relative-caret-position="594">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/config/VerifyAutoConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#VerifyAutoConfiguration#0" />
+            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#899#900#0" expanded="true" />
+            <element signature="e#956#957#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/AbstractPackageScanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="687">
+          <caret line="73" column="5" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#AbstractPackageScanner#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/io/PrintStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="733" column="16" selection-start-line="733" selection-start-column="16" selection-end-line="733" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/annotation/Annotation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="3413" lean-forward="true" selection-start-line="3413" selection-end-line="3413" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.8.RELEASE/spring-core-5.1.8.RELEASE-sources.jar!/org/springframework/util/ObjectUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="133" column="40" lean-forward="true" selection-start-line="133" selection-start-column="40" selection-end-line="133" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/HttpStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+          <folding>
+            <element signature="docComment;class#HttpStatus#0" />
+            <element signature="e#535#559#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/exception/BaseException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="29" column="3" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/validate/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        <state relative-caret-position="486">
+          <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/VerifyEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+          <folding>
+            <element signature="docComment;class#VerifyEntity#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/EnableVerify.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="42" column="43" lean-forward="true" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#EnableVerify#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/Verify.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/handle/GlobalExceptionHandle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/aspect/VerifyMethodArgumentResolver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="37" selection-start-line="37" selection-end-line="37" selection-end-column="7" />
+        <state relative-caret-position="657">
+          <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#VerifyMethodArgumentResolver#0" />
-            <element signature="e#921#922#0" expanded="true" />
-            <element signature="e#969#970#0" expanded="true" />
+            <element signature="e#1742#1743#0" expanded="true" />
+            <element signature="e#1778#1779#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/exception/InvalidDataDefinitionException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="docComment;class#InvalidDataDefinitionException#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/config/VerifyInterpreterRegistry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="43" column="62" lean-forward="true" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#VerifyInterpreterRegistry#0" />
+            <element signature="e#1022#1023#0" expanded="true" />
+            <element signature="e#1079#1080#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>html5shiv</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>architect</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: org.aspectj:aspectjweaver:1.8.13</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
