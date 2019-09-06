@@ -1,2 +1,6 @@
+com\coder\framework\validate\annotation\EnableVerify.class
 com\coder\framework\validate\aspect\VerifyMethodArgumentResolver.class
+com\coder\framework\validate\util\AbstractPackageScanner.class
+com\coder\framework\validate\annotation\VerifyScan.class
 com\coder\framework\validate\annotation\Verify.class
+com\coder\framework\validate\config\VerifyInterpreterRegistry.class

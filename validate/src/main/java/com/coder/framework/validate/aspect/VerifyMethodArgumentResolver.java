@@ -1,10 +1,16 @@
 package com.coder.framework.validate.aspect;
 
+import com.coder.framework.validate.annotation.EnableVerify;
+import com.coder.framework.validate.annotation.VerifyEntity;
+import com.coder.framework.validate.annotation.VerifyScan;
+import com.coder.framework.validate.util.AbstractPackageScanner;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.util.ObjectUtils;
 
+import java.lang.annotation.Annotation;
 import java.util.Arrays;
 
 /**
@@ -41,9 +47,30 @@ public class VerifyMethodArgumentResolver {
     @Pointcut("@annotation(com.coder.framework.validate.annotation.Verify)")
     public void doAspect() {}
 
+    @Pointcut("@annotation(com.coder.framework.validate.annotation.EnableVerify)")
+    public void doEnableVerify() {}
+
     @Before("doAspect()")
     public void doBefore(JoinPoint joinPoint) {
+        for (Object arg : joinPoint.getArgs()) {
+
+            Class aClass = arg.getClass();
+            Annotation annotation = aClass.getAnnotation(VerifyEntity.class);
+        }
         System.out.println(Arrays.toString(joinPoint.getArgs()));
+    }
+
+    @Before("doEnableVerify()")
+    public void doEnableVerify(JoinPoint joinPoint) {
+        System.out.println(12312312);
+    }
+
+    private boolean isPrimitive(Object obj) {
+        try {
+            return ((Class<?>)obj.getClass().getField("TYPE").get(null)).isPrimitive();
+        } catch (Exception e) {
+            return false;
+        }
     }
 
 }
