@@ -53,8 +53,8 @@ public class VerifyMethodArgumentResolver {
     @Before("doAspect()")
     public void doBefore(JoinPoint joinPoint) {
         for (Object arg : joinPoint.getArgs()) {
-
             Class aClass = arg.getClass();
+
             Annotation annotation = aClass.getAnnotation(VerifyEntity.class);
         }
         System.out.println(Arrays.toString(joinPoint.getArgs()));
