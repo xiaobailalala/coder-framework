@@ -39,9 +39,8 @@ import java.lang.annotation.*;
 @Import(VerifyInterpreterRegistry.class)
 public @interface EnableVerify {
 
-//    @AliasFor(annotation = VerifyScan.class, attribute = "basePackages")
-//    String[] scanBasePackages() default {};
+    String[] scanBasePackages() default {};
 
-    Class<?> baseClazzForScan();
+    Class<?> baseClazzForScan() default Class.class;
 
 }

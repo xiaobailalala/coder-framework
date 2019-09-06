@@ -1,13 +1,12 @@
 package com.coder.framework.validate.handle;
 
-import com.coder.framework.validate.exception.InvalidDataDefinitionException;
+import com.coder.framework.validate.config.VerifyInterpreterRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.context.support.ApplicationObjectSupport;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import javax.servlet.http.HttpServletResponse;
+import java.util.Objects;
 
 /**
  * Copyright © 2018 eSunny Info. Developer Stu. All rights reserved.
@@ -37,9 +36,11 @@ import javax.servlet.http.HttpServletResponse;
  * @version 1.0
  * @description
  */
-//@ControllerAdvice(this.pack)
-@ResponseBody
-public class GlobalExceptionHandle {
+//@RestControllerAdvice(basePackages = this.scanPackage)
+public class GlobalExceptionHandle extends ApplicationObjectSupport {
+
+//    final String scanPackage = "1234";
+    final String[] scanPackage = Objects.requireNonNull(getApplicationContext()).getBean(VerifyInterpreterRegistry.class).getPackageContainer().toArray(new String[0]);
 
     private Logger logger = LoggerFactory.getLogger(GlobalExceptionHandle.class);
 

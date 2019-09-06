@@ -1,14 +1,10 @@
 package com.coder.framework.validate.aspect;
 
-import com.coder.framework.validate.annotation.EnableVerify;
 import com.coder.framework.validate.annotation.VerifyEntity;
-import com.coder.framework.validate.annotation.VerifyScan;
-import com.coder.framework.validate.util.AbstractPackageScanner;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
-import org.springframework.util.ObjectUtils;
 
 import java.lang.annotation.Annotation;
 import java.util.Arrays;
@@ -47,7 +43,7 @@ public class VerifyMethodArgumentResolver {
     @Pointcut("@annotation(com.coder.framework.validate.annotation.Verify)")
     public void doAspect() {}
 
-    @Pointcut("@annotation(com.coder.framework.validate.annotation.EnableVerify)")
+    @Pointcut("@annotation(org.springframework.web.bind.annotation.ControllerAdvice)")
     public void doEnableVerify() {}
 
     @Before("doAspect()")
