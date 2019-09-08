@@ -1,8 +1,4 @@
-package com.coder.framework.validate.annotation;
-
-import org.springframework.core.annotation.AliasFor;
-
-import java.lang.annotation.*;
+package com.coder.framework.validate.util;
 
 /**
  * Copyright © 2018 eSunny Info. Developer Stu. All rights reserved.
@@ -28,19 +24,10 @@ import java.lang.annotation.*;
  * 　　　┗┻┛　┗┻┛
  *
  * @author zpx
- * Build File @date: 2019/9/5 13:02
+ * Build File @date: 2019/9/7 11:48
  * @version 1.0
- * @description
+ * @description TODO
  */
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-public @interface VerifyScan {
-
-    @AliasFor("basePackages")
-    String[] value();
-
-    @AliasFor("value")
-    String[] basePackages();
+public class ResponseEntity {
 
 }

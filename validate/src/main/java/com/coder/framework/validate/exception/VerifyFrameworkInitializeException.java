@@ -1,9 +1,4 @@
-package com.coder.framework.validate.annotation;
-
-import com.coder.framework.validate.config.VerifyInterpreterRegistry;
-import org.springframework.context.annotation.Import;
-
-import java.lang.annotation.*;
+package com.coder.framework.validate.exception;
 
 /**
  * Copyright © 2018 eSunny Info. Developer Stu. All rights reserved.
@@ -29,18 +24,10 @@ import java.lang.annotation.*;
  * 　　　┗┻┛　┗┻┛
  *
  * @author zpx
- * Build File @date: 2019/9/5 12:58
+ * Build File @date: 2019/9/7 13:24
  * @version 1.0
- * @description
+ * @description TODO
  */
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-@Import(VerifyInterpreterRegistry.class)
-public @interface EnableVerify {
-
-    String[] scanBasePackages() default {};
-
-    Class<?> baseClazzForScan() default Class.class;
+public class VerifyFrameworkInitializeException {
 
 }

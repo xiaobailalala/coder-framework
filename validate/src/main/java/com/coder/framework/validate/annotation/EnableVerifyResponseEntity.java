@@ -1,5 +1,7 @@
 package com.coder.framework.validate.annotation;
 
+import com.coder.framework.validate.util.ResponseEntityMode;
+
 import java.lang.annotation.*;
 
 /**
@@ -33,5 +35,16 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface VerifyEntity {
+public @interface VerifyResponseEntity {
+
+    String messageFeild() default "message";
+
+    String statusFeild() default "status";
+
+    String dataFeild() default "data";
+
+    String conditionFeild() default "condition";
+
+    ResponseEntityMode ignoredFeild() default ResponseEntityMode.DEFAULT;
+
 }
