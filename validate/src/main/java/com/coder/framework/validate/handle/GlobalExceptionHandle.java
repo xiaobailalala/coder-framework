@@ -55,9 +55,9 @@ public class GlobalExceptionHandle implements ApplicationContextAware {
     @ExceptionHandler(InvalidDataDefinitionException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public Object clientTokenExceptionHandler(InvalidDataDefinitionException ex) {
-        logger.error(ex.getMessage(),ex);
+        logger.error(ex.getMessage());
         return getResponseBuilderManagerBean().builder()
-                .conditionBuilder(false)
+                .conditionBuilder(true)
                 .dataBuilder(null)
                 .messageBuilder(ex.getMessage())
                 .statusBuilder(HttpStatus.INTERNAL_SERVER_ERROR.value())

@@ -1,6 +1,5 @@
 package com.coder.framework.validate.aspect;
 
-import com.coder.framework.validate.annotation.EnableVerifyResponseEntity;
 import com.coder.framework.validate.annotation.Verify;
 import com.coder.framework.validate.exception.InvalidDataDefinitionException;
 import org.aspectj.lang.JoinPoint;
@@ -8,8 +7,8 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.util.ObjectUtils;
 
-import java.lang.annotation.Annotation;
 import java.util.Arrays;
 
 /**
@@ -51,13 +50,15 @@ public class VerifyMethodArgumentResolver {
 
     @Before("doAspect()")
     public void doBefore(JoinPoint joinPoint) {
-        Verify annotation = ((MethodSignature) joinPoint.getSignature()).getMethod().getAnnotation(Verify.class);
-        for (Object arg : joinPoint.getArgs()) {
-            if (arg.toString().equals("1")) {
-                throw new InvalidDataDefinitionException(annotation.msg());
+        if (!ObjectUtils.isEmpty(joinPoint.getArgs())) {
+            Verify annotation = ((MethodSignature) joinPoint.getSignature()).getMethod().getAnnotation(Verify.class);
+            for (Object arg : joinPoint.getArgs()) {
+                if (arg.toString().equals("1")) {
+                    throw new InvalidDataDefinitionException(annotation.msg());
+                }
             }
+            System.out.println(Arrays.toString(joinPoint.getArgs()));
         }
-        System.out.println(Arrays.toString(joinPoint.getArgs()));
     }
 
     @Before("doEnableVerify()")
