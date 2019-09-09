@@ -1,6 +1,7 @@
 package com.coder.framework.validate.aspect;
 
-import com.coder.framework.validate.annotation.VerifyEntity;
+import com.coder.framework.validate.annotation.EnableVerifyResponseEntity;
+import com.coder.framework.validate.exception.InvalidDataDefinitionException;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -51,7 +52,10 @@ public class VerifyMethodArgumentResolver {
         for (Object arg : joinPoint.getArgs()) {
             Class aClass = arg.getClass();
 
-            Annotation annotation = aClass.getAnnotation(VerifyEntity.class);
+            if (arg.toString().equals("1")) {
+                throw new InvalidDataDefinitionException("hahaha");
+            }
+            Annotation annotation = aClass.getAnnotation(EnableVerifyResponseEntity.class);
         }
         System.out.println(Arrays.toString(joinPoint.getArgs()));
     }

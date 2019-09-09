@@ -1,5 +1,7 @@
 package com.coder.framework.validate.exception;
 
+import com.coder.framework.validate.util.HttpStatus;
+
 /**
  * Copyright © 2018 eSunny Info. Developer Stu. All rights reserved.
  * <p>
@@ -28,6 +30,10 @@ package com.coder.framework.validate.exception;
  * @version 1.0
  * @description TODO
  */
-public class VerifyFrameworkInitializeException {
+public class VerifyFrameworkInitializeException extends BaseException {
+
+    public VerifyFrameworkInitializeException(String message) {
+        super(message, HttpStatus.SC_INTERNAL_SERVER_ERROR);
+    }
 
 }

@@ -29,5 +29,8 @@ package com.coder.framework.validate.util;
  * @description TODO
  */
 public class ResponseEntity {
-
+    private String message;
+    private int status;
+    private Object data;
+    private boolean condition;
 }

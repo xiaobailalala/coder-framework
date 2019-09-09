@@ -1,10 +1,10 @@
-com\coder\framework\validate\annotation\VerifyEntity.class
+com\coder\framework\validate\util\ResponseEntity.class
+com\coder\framework\validate\aspect\VerifyMethodArgumentResolver.class
+com\coder\framework\validate\util\HttpStatus.class
+com\coder\framework\validate\annotation\Verify.class
+com\coder\framework\validate\exception\InvalidDataDefinitionException.class
 com\coder\framework\validate\exception\BaseException.class
 com\coder\framework\validate\annotation\EnableVerify.class
-com\coder\framework\validate\aspect\VerifyMethodArgumentResolver.class
 com\coder\framework\validate\util\AbstractPackageScanner.class
-com\coder\framework\validate\util\HttpStatus.class
 com\coder\framework\validate\handle\GlobalExceptionHandle.class
-com\coder\framework\validate\annotation\Verify.class
 com\coder\framework\validate\config\VerifyInterpreterRegistry.class
-com\coder\framework\validate\exception\InvalidDataDefinitionException.class
