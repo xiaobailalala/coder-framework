@@ -1,9 +1,12 @@
 package com.coder.framework.validate.handle;
 
+import com.coder.framework.validate.common.ResponseBuilderManager;
 import com.coder.framework.validate.exception.InvalidDataDefinitionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.support.ApplicationObjectSupport;
 import org.springframework.http.HttpStatus;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Copyright © 2018 eSunny Info. Developer Stu. All rights reserved.
@@ -43,17 +47,31 @@ import java.util.Map;
  * @description
  */
 @RestControllerAdvice
-public class GlobalExceptionHandle extends ApplicationObjectSupport {
+public class GlobalExceptionHandle implements ApplicationContextAware {
 
     private Logger logger = LoggerFactory.getLogger(GlobalExceptionHandle.class);
+    private ApplicationContext applicationContext;
 
     @ExceptionHandler(InvalidDataDefinitionException.class)
-    @ResponseStatus(HttpStatus.PAYMENT_REQUIRED)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public Object clientTokenExceptionHandler(InvalidDataDefinitionException ex) {
         logger.error(ex.getMessage(),ex);
-        Map<String, String> result = new HashMap<>(8);
-        result.put("msg", "must not be null");
-        return result;
+        return getResponseBuilderManagerBean().builder()
+                .conditionBuilder(false)
+                .dataBuilder(null)
+                .messageBuilder(ex.getMessage())
+                .statusBuilder(HttpStatus.INTERNAL_SERVER_ERROR.value())
+                .generatorResponseEntity();
+    }
+
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext = applicationContext;
+    }
+
+    private ResponseBuilderManager getResponseBuilderManagerBean() {
+        return this.applicationContext.getBean(ResponseBuilderManager.class);
     }
 
 }

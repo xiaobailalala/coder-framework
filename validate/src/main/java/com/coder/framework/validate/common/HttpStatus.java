@@ -1,4 +1,4 @@
-package com.coder.framework.validate.util;
+package com.coder.framework.validate.common;
 
 /**
  * Copyright © 2018 eSunny Info. Developer Stu. All rights reserved.

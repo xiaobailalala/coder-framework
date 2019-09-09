@@ -1,4 +1,4 @@
-package com.coder.framework.validate.util;
+package com.coder.framework.validate.common;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,7 +1,7 @@
 package com.coder.framework.validate.annotation;
 
 import com.coder.framework.validate.config.VerifyInterpreterRegistry;
-import com.coder.framework.validate.util.ResponseEntity;
+import com.coder.framework.validate.common.ResponseEntity;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.*;

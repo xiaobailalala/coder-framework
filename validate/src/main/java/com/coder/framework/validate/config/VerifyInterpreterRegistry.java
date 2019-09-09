@@ -3,10 +3,11 @@ package com.coder.framework.validate.config;
 import com.coder.framework.validate.annotation.EnableVerify;
 import com.coder.framework.validate.annotation.EnableVerifyResponseEntity;
 import com.coder.framework.validate.aspect.VerifyMethodArgumentResolver;
+import com.coder.framework.validate.common.ResponseBuilderManager;
 import com.coder.framework.validate.exception.VerifyFrameworkInitializeException;
 import com.coder.framework.validate.handle.GlobalExceptionHandle;
-import com.coder.framework.validate.util.ResponseEntity;
-import com.coder.framework.validate.util.ResponseEntityMode;
+import com.coder.framework.validate.common.ResponseEntity;
+import com.coder.framework.validate.common.ResponseEntityMode;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.DependsOn;
@@ -58,11 +59,19 @@ import java.util.stream.Collectors;
 public class VerifyInterpreterRegistry extends ApplicationObjectSupport implements CommandLineRunner {
 
     private static Pattern packagePattern = Pattern.compile("^[a-zA-Z]+[0-9a-zA-Z_]*(\\.[a-zA-Z]+[0-9a-zA-Z_]*)*$");
+    private Class<?> responseEntity;
+    private Map<String, Object> validResponseEntityField;
 
-    @Bean
-    @DependsOn("globalExceptionHandle")
+    @Bean(name = "verifyMethodArgumentResolver")
+    @DependsOn("responseBuilderManager")
     public VerifyMethodArgumentResolver verifyMethodArgumentResolver() {
         return new VerifyMethodArgumentResolver();
+    }
+
+    @Bean(name = "responseBuilderManager", initMethod = "initResponseBuilder")
+    @DependsOn("globalExceptionHandle")
+    public ResponseBuilderManager responseBuilderManager() {
+        return new ResponseBuilderManager();
     }
 
     @Bean(name = "globalExceptionHandle")
@@ -85,25 +94,30 @@ public class VerifyInterpreterRegistry extends ApplicationObjectSupport implemen
 
     private void initializeResponseEntity() {
         Map<String, Object> beansWithAnnotation = Objects.requireNonNull(getApplicationContext()).getBeansWithAnnotation(EnableVerify.class);
-        Set<Object> responseEntity = new LinkedHashSet<>();
         for (Map.Entry<String, Object> entry : beansWithAnnotation.entrySet()) {
             EnableVerify enableVerify = getAnnotationFromProxyTarget(entry.getValue().getClass(), EnableVerify.class);
             if (!ObjectUtils.isEmpty(enableVerify)) {
                 Class<?> entity = enableVerify.responseEntity();
                 if (!ResponseEntity.class.equals(entity)) {
+                    if (!ObjectUtils.isEmpty(responseEntity)) {
+                        throw new VerifyFrameworkInitializeException("Do not define too many response classes.");
+                    }
                     EnableVerifyResponseEntity enableVerifyResponseEntity = getAnnotationFromProxyTarget(entry.getValue().getClass(), EnableVerifyResponseEntity.class);
                     if (ObjectUtils.isEmpty(enableVerifyResponseEntity)) {
                         throw new VerifyFrameworkInitializeException("If the responseEntity parameter is declared in annotations [EnableVerify]" +
                                 ", then the annotation [VerifyResponseEntity] must be declared at the same level.");
                     }
-                    checkResponseEntityValidity(enableVerifyResponseEntity, entity);
+                    responseEntity = checkResponseEntityValidity(enableVerifyResponseEntity, entity);
                 }
             }
+        }
+        if (ObjectUtils.isEmpty(responseEntity)) {
+            responseEntity = ResponseEntity.class;
         }
     }
 
     @SuppressWarnings("unchecked")
-    private void checkResponseEntityValidity(EnableVerifyResponseEntity enableVerifyResponseEntity, Class<?> entity) {
+    private Class<?> checkResponseEntityValidity(EnableVerifyResponseEntity enableVerifyResponseEntity, Class<?> entity) {
         List<ResponseEntityMode> ignoreFieldContainer = new LinkedList<>(Arrays.asList(enableVerifyResponseEntity.ignoredField()));
         ignoreFieldContainer.remove(ResponseEntityMode.DEFAULT);
         try {
@@ -112,22 +126,29 @@ public class VerifyInterpreterRegistry extends ApplicationObjectSupport implemen
             InvocationHandler invocationHandler = Proxy.getInvocationHandler(enableVerifyResponseEntity);
             Field memberValues = invocationHandler.getClass().getDeclaredField("memberValues");
             memberValues.setAccessible(true);
-            Map<String, Object> fields = (Map<String, Object>) memberValues.get(invocationHandler);
-            fields.remove("ignoredField");
+            this.validResponseEntityField = (Map<String, Object>) memberValues.get(invocationHandler);
+            this.validResponseEntityField.remove("ignoredField");
             for (ResponseEntityMode responseEntityMode : ignoreFieldContainer) {
-                fields.remove(responseEntityMode.getFieldName() + "Field");
+                this.validResponseEntityField.remove(responseEntityMode.getFieldName());
             }
-            for (Field field : entity.getDeclaredFields()) {
-                field.setAccessible(true);
-                System.out.println(field.getName());
+            for (Map.Entry<String, Object> field : this.validResponseEntityField.entrySet()) {
+                try {
+                    Field declaredField = entity.getDeclaredField(field.getValue().toString());
+                    declaredField.setAccessible(true);
+                    Class<?>[] fieldTypeArr = ResponseEntityMode.findByFieldName(field.getKey()).getFieldType();
+                    if (!Arrays.asList(fieldTypeArr).contains(declaredField.getType())) {
+                        throw new VerifyFrameworkInitializeException("The field [" + declaredField.getName() + "] must be " +
+                                "an item in the array" + Arrays.toString(fieldTypeArr) + ".");
+                    }
+                } catch (NoSuchFieldException fieldException) {
+                    throw new VerifyFrameworkInitializeException("The field [" + field.getValue() + "] is not defined.");
+                }
             }
-            for (Map.Entry<String, Object> stringObjectEntry : fields.entrySet()) {
-                stringObjectEntry.getValue();
-            }
+            return entity;
         } catch (NoSuchFieldException | IllegalAccessException e) {
             e.printStackTrace();
         }
-
+        throw new VerifyFrameworkInitializeException("Response class " + entity + " initialization failed.");
     }
 
     private List<String> getBasePackageForExceptionHandle() {
@@ -187,6 +208,14 @@ public class VerifyInterpreterRegistry extends ApplicationObjectSupport implemen
 
     private <A extends Annotation> A getAnnotationFromProxyTarget(Class<?> proxy, @Nullable Class<A> annotationType) {
         return AnnotationUtils.findAnnotation(proxy, annotationType);
+    }
+
+    public Class<?> getResponseEntity() {
+        return responseEntity;
+    }
+
+    public Map<String, Object> getValidResponseEntityField() {
+        return validResponseEntityField;
     }
 
     @Override

@@ -1,6 +1,6 @@
 package com.coder.framework.validate.exception;
 
-import com.coder.framework.validate.util.HttpStatus;
+import com.coder.framework.validate.common.HttpStatus;
 
 /**
  * Copyright © 2018 eSunny Info. Developer Stu. All rights reserved.
