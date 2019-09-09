@@ -39,8 +39,8 @@ import java.util.Objects;
 //@RestControllerAdvice(basePackages = this.scanPackage)
 public class GlobalExceptionHandle extends ApplicationObjectSupport {
 
-//    final String scanPackage = "1234";
-    final String[] scanPackage = Objects.requireNonNull(getApplicationContext()).getBean(VerifyInterpreterRegistry.class).getPackageContainer().toArray(new String[0]);
+    final String scanPackage = "1234";
+//    final String[] scanPackage = Objects.requireNonNull(getApplicationContext()).getBean(VerifyInterpreterRegistry.class).getPackageContainer().toArray(new String[0]);
 
     private Logger logger = LoggerFactory.getLogger(GlobalExceptionHandle.class);
 
