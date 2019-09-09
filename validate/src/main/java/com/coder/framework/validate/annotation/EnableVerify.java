@@ -1,6 +1,7 @@
 package com.coder.framework.validate.annotation;
 
 import com.coder.framework.validate.config.VerifyInterpreterRegistry;
+import com.coder.framework.validate.util.ResponseEntity;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.*;
@@ -42,5 +43,7 @@ public @interface EnableVerify {
     String[] scanBasePackages() default {};
 
     Class<?> baseClazzForScan() default Class.class;
+
+    Class<?> responseEntity() default ResponseEntity.class;
 
 }

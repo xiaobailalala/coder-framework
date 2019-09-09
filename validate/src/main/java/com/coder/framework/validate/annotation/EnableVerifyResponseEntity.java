@@ -35,16 +35,16 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface VerifyResponseEntity {
+public @interface EnableVerifyResponseEntity {
 
-    String messageFeild() default "message";
+    String messageField() default "message";
 
-    String statusFeild() default "status";
+    String statusField() default "status";
 
-    String dataFeild() default "data";
+    String dataField() default "data";
 
-    String conditionFeild() default "condition";
+    String conditionField() default "condition";
 
-    ResponseEntityMode ignoredFeild() default ResponseEntityMode.DEFAULT;
+    ResponseEntityMode[] ignoredField() default ResponseEntityMode.DEFAULT;
 
 }
