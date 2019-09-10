@@ -1,5 +1,4 @@
 com\coder\framework\validate\common\ResponseBuilder.class
-com\coder\framework\validate\aspect\VerifyMethodArgumentResolver.class
 com\coder\framework\validate\exception\VerifyFrameworkInitializeException.class
 com\coder\framework\validate\annotation\EnableVerifyResponseEntity.class
 com\coder\framework\validate\annotation\Verify.class
@@ -7,6 +6,7 @@ com\coder\framework\validate\common\ResponseEntity.class
 com\coder\framework\validate\exception\InvalidDataDefinitionException.class
 com\coder\framework\validate\common\ResponseEntityMode.class
 com\coder\framework\validate\exception\BaseException.class
+com\coder\framework\validate\resolver\VerifyCoreProcessorResolver.class
 com\coder\framework\validate\annotation\EnableVerify.class
 com\coder\framework\validate\common\AbstractPackageScanner.class
 com\coder\framework\validate\common\HttpStatus.class

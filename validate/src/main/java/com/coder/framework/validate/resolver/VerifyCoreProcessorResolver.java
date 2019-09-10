@@ -1,4 +1,4 @@
-package com.coder.framework.validate.aspect;
+package com.coder.framework.validate.resolver;
 
 import com.coder.framework.validate.annotation.Verify;
 import com.coder.framework.validate.exception.InvalidDataDefinitionException;
@@ -40,30 +40,31 @@ import java.util.Arrays;
  * @description TODO
  */
 @Aspect
-public class VerifyMethodArgumentResolver {
+public class VerifyCoreProcessorResolver {
 
     @Pointcut("@annotation(com.coder.framework.validate.annotation.Verify)")
     public void doAspect() {}
 
-    @Pointcut("@annotation(org.springframework.web.bind.annotation.ControllerAdvice)")
-    public void doEnableVerify() {}
-
     @Before("doAspect()")
     public void doBefore(JoinPoint joinPoint) {
         if (!ObjectUtils.isEmpty(joinPoint.getArgs())) {
-            Verify annotation = ((MethodSignature) joinPoint.getSignature()).getMethod().getAnnotation(Verify.class);
-            for (Object arg : joinPoint.getArgs()) {
-                if (arg.toString().equals("1")) {
-                    throw new InvalidDataDefinitionException(annotation.msg());
+            new AbstractVerifyResolverFactory() {
+                @Override
+                public void processAndGetResult(RuntimeException throwable) {
+                    throw throwable;
                 }
-            }
-            System.out.println(Arrays.toString(joinPoint.getArgs()));
-        }
-    }
+            }.createVerifyResolverFactory(joinPoint);
 
-    @Before("doEnableVerify()")
-    public void doEnableVerify(JoinPoint joinPoint) {
-        System.out.println(12312312);
+
+
+//            Verify verify = ((MethodSignature) joinPoint.getSignature()).getMethod().getAnnotation(Verify.class);
+//            for (Object arg : joinPoint.getArgs()) {
+//                if (arg.toString().equals("1")) {
+//                    throw new InvalidDataDefinitionException(verify.msg());
+//                }
+//            }
+//            System.out.println(Arrays.toString(joinPoint.getArgs()));
+        }
     }
 
     private boolean isPrimitive(Object obj) {

@@ -2,7 +2,7 @@ package com.coder.framework.validate.config;
 
 import com.coder.framework.validate.annotation.EnableVerify;
 import com.coder.framework.validate.annotation.EnableVerifyResponseEntity;
-import com.coder.framework.validate.aspect.VerifyMethodArgumentResolver;
+import com.coder.framework.validate.resolver.VerifyCoreProcessorResolver;
 import com.coder.framework.validate.common.ResponseBuilderManager;
 import com.coder.framework.validate.exception.VerifyFrameworkInitializeException;
 import com.coder.framework.validate.handle.GlobalExceptionHandle;
@@ -62,10 +62,10 @@ public class VerifyInterpreterRegistry extends ApplicationObjectSupport implemen
     private Class<?> responseEntity;
     private Map<String, Object> validResponseEntityField;
 
-    @Bean(name = "verifyMethodArgumentResolver")
+    @Bean
     @DependsOn("responseBuilderManager")
-    public VerifyMethodArgumentResolver verifyMethodArgumentResolver() {
-        return new VerifyMethodArgumentResolver();
+    public VerifyCoreProcessorResolver verifyCoreProcessorResolver() {
+        return new VerifyCoreProcessorResolver();
     }
 
     @Bean(name = "responseBuilderManager", initMethod = "initResponseBuilder")

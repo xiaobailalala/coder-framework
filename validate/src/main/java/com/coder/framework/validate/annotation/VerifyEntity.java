@@ -1,6 +1,6 @@
-package com.coder.framework.validate.exception;
+package com.coder.framework.validate.annotation;
 
-import com.coder.framework.validate.common.HttpStatus;
+import java.lang.annotation.*;
 
 /**
  * Copyright © 2018 eSunny Info. Developer Stu. All rights reserved.
@@ -26,14 +26,12 @@ import com.coder.framework.validate.common.HttpStatus;
  * 　　　┗┻┛　┗┻┛
  *
  * @author zpx
- * Build File @date: 2019/9/7 13:24
+ * Build File @date: 2019/9/10 10:38
  * @version 1.0
- * @description TODO
+ * @description
  */
-public class VerifyFrameworkInitializeException extends VerifyBaseException {
-
-    public VerifyFrameworkInitializeException(String message) {
-        super(message, HttpStatus.SC_INTERNAL_SERVER_ERROR);
-    }
-
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface VerifyEntity {
 }

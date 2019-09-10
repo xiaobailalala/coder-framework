@@ -1,6 +1,10 @@
-package com.coder.framework.validate.exception;
+package com.coder.framework.validate.resolver;
 
-import com.coder.framework.validate.common.HttpStatus;
+import com.coder.framework.validate.annotation.VerifyOrder;
+import com.coder.framework.validate.exception.VerifyBaseException;
+import org.aspectj.lang.JoinPoint;
+
+import java.util.List;
 
 /**
  * Copyright © 2018 eSunny Info. Developer Stu. All rights reserved.
@@ -26,14 +30,20 @@ import com.coder.framework.validate.common.HttpStatus;
  * 　　　┗┻┛　┗┻┛
  *
  * @author zpx
- * Build File @date: 2019/9/7 13:24
+ * Build File @date: 2019/9/10 20:22
  * @version 1.0
- * @description TODO
+ * @description
  */
-public class VerifyFrameworkInitializeException extends VerifyBaseException {
+@VerifyOrder(2)
+public class VerifyEntityResolver extends AbstractVerifyProcess {
 
-    public VerifyFrameworkInitializeException(String message) {
-        super(message, HttpStatus.SC_INTERNAL_SERVER_ERROR);
+    @Override
+    public boolean methodFilter(JoinPoint joinPoint) {
+        return true;
     }
 
+    @Override
+    public VerifyBaseException coreProcessingMethod(JoinPoint joinPoint, List<AbstractVerifyProcess> abstractVerifyProcesses) {
+        return null;
+    }
 }

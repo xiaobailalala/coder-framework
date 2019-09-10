@@ -30,7 +30,7 @@ import com.coder.framework.validate.common.HttpStatus;
  * @version 1.0
  * @description
  */
-public class InvalidDataDefinitionException extends BaseException {
+public class InvalidDataDefinitionException extends VerifyBaseException {
     public InvalidDataDefinitionException(String message) {
         super(message, HttpStatus.SC_UNAUTHORIZED);
     }

@@ -1,12 +1,16 @@
 package com.coder.framework.validate.common;
 
 import com.coder.framework.validate.config.VerifyInterpreterRegistry;
+import org.springframework.cglib.beans.BeanCopier;
+import org.springframework.cglib.beans.BeanGenerator;
 import org.springframework.util.ObjectUtils;
 
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Map;
 
 /**
  * Copyright © 2018 eSunny Info. Developer Stu. All rights reserved.
@@ -83,7 +87,19 @@ public class ResponseBuilder {
     }
 
     public Object generatorResponseEntity() {
-        return this.responseEntity;
+        BeanGenerator beanGenerator = new BeanGenerator();
+        for (Map.Entry<String, Object> entry : this.verifyInterpreterRegistry.getValidResponseEntityField().entrySet()) {
+            try {
+                Field declaredField = this.responseEntity.getClass().getDeclaredField(entry.getValue().toString());
+                beanGenerator.addProperty(entry.getValue().toString(), declaredField.getType());
+            } catch (NoSuchFieldException e) {
+                e.printStackTrace();
+            }
+        }
+        Object responseObj = beanGenerator.create();
+        BeanCopier copier = BeanCopier.create(this.responseEntity.getClass(), responseObj.getClass(), false);
+        copier.copy(this.responseEntity, responseObj, null);
+        return responseObj;
     }
 
     private <T> void invokeSetMethod(Object field, T value) {
