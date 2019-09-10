@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="827ce0d0-08f1-4868-ad8b-28c51e8fed4d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/validate/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/EnableVerify.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/EnableVerify.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/EnableVerifyResponseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/EnableVerifyResponseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/aspect/VerifyMethodArgumentResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/aspect/VerifyMethodArgumentResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/config/VerifyInterpreterRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/config/VerifyInterpreterRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/exception/VerifyFrameworkInitializeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/exception/VerifyFrameworkInitializeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/handle/GlobalExceptionHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/handle/GlobalExceptionHandle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/ResponseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/ResponseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/ResponseEntityMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/ResponseEntityMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/validate/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/validate/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate/target/validate-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/validate/target/validate-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -51,9 +40,10 @@
         <counts>
           <entry key="ExceptionHandlerExceptionResolver" value="1" />
           <entry key="class" value="3" />
+          <entry key="gitignore" value="1" />
           <entry key="iml" value="1" />
           <entry key="java" value="58" />
-          <entry key="xml" value="3" />
+          <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -61,21 +51,23 @@
           <entry key="CLASS" value="3" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="JAVA" value="58" />
+          <entry key="PLAIN_TEXT" value="1" />
           <entry key="UML" value="1" />
-          <entry key="XML" value="3" />
+          <entry key="XML" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="14" />
-          <entry key="java" value="2456" />
+          <entry key="gitignore" value="10" />
+          <entry key="java" value="2460" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2456" />
-          <entry key="PLAIN_TEXT" value="14" />
+          <entry key="JAVA" value="2460" />
+          <entry key="PLAIN_TEXT" value="24" />
           <entry key="XML" value="5" />
         </counts>
       </usages-collector>
@@ -83,14 +75,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/config/VerifyInterpreterRegistry.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="121" column="52" lean-forward="true" selection-start-line="121" selection-start-column="52" selection-end-line="121" selection-end-column="52" />
+            <state relative-caret-position="226">
+              <caret line="115" column="42" lean-forward="true" selection-start-line="115" selection-start-column="42" selection-end-line="115" selection-end-column="42" />
               <folding>
                 <element signature="docComment;class#VerifyInterpreterRegistry#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -138,6 +148,7 @@
         <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/ResponseEntityMode.java" />
         <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/EnableVerifyResponseEntity.java" />
         <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/config/VerifyInterpreterRegistry.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -351,7 +362,7 @@
     <property name="SearchEverywhereHistoryKey" value="ExceptionHandlerExceptionResolver&#9;PSI&#9;JAVA://org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration.EnableWebMvcConfiguration#createExceptionHandlerExceptionResolver&#10;lombok&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567994279818" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568133531048" />
     <property name="last_opened_file_path" value="C:/Program Files/Java/jdk1.8.0_131/bin/jvisualvm.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -388,16 +399,37 @@
       <option name="project" value="LOCAL" />
       <updated>1567964215990</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Merge branch 'master' of github.com:xiaobailalala/coder-framework&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1567994313821</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1567994313821</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Merge branch 'master' of github.com:xiaobailalala/coder-framework&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1568133323206</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568133323206</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Merge branch 'master' of github.com:xiaobailalala/coder-framework&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1568133382740</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1568133382740</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40605000" />
+    <option name="totallyTimeSpent" value="41566000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49916804" visible="true" weight="0.2496" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49916804" visible="true" weight="0.2496" />
       <window_info id="Structure" order="1" sideWeight="0.50083196" side_tool="true" weight="0.2496" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" side_tool="true" />
@@ -414,10 +446,10 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32998884" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5002667" side_tool="true" visible="true" weight="0.24414715" />
       <window_info anchor="bottom" id="Run with VisualVM" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="12" visible="true" weight="0.32998884" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49973333" visible="true" weight="0.24414715" />
       <window_info anchor="bottom" id="JRebel Executor" order="13" />
       <window_info anchor="bottom" id="JRebel Console" order="14" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="15" weight="0.32887402" />
@@ -721,11 +753,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/config/VerifyInterpreterRegistry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="121" column="52" lean-forward="true" selection-start-line="121" selection-start-column="52" selection-end-line="121" selection-end-column="52" />
+        <state relative-caret-position="226">
+          <caret line="115" column="42" lean-forward="true" selection-start-line="115" selection-start-column="42" selection-end-line="115" selection-end-column="42" />
           <folding>
             <element signature="docComment;class#VerifyInterpreterRegistry#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
