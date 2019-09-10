@@ -362,7 +362,7 @@
     <property name="SearchEverywhereHistoryKey" value="ExceptionHandlerExceptionResolver&#9;PSI&#9;JAVA://org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration.EnableWebMvcConfiguration#createExceptionHandlerExceptionResolver&#10;lombok&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568133531048" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568133552245" />
     <property name="last_opened_file_path" value="C:/Program Files/Java/jdk1.8.0_131/bin/jvisualvm.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
