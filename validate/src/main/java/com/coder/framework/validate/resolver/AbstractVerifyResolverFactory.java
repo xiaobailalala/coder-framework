@@ -45,7 +45,6 @@ public abstract class AbstractVerifyResolverFactory {
 
     /**
      * The callback method after execution by the handler that parses the annotation
-     *
      * @param throwable An exception is thrown if an exception occurs in the process of resolving the target
      */
     public abstract void processAndGetResult(RuntimeException throwable);

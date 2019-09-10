@@ -36,17 +36,17 @@ import java.util.List;
 public abstract class AbstractVerifyProcess {
 
     /**
-     * das
-     * @param joinPoint asd
-     * @return adsa
+     * Determine if conditions are met that can be processed using the corresponding annotation
+     * @param joinPoint Cut - through object
+     * @return Returns true, executes the processor, otherwise does not
      */
     public abstract boolean methodFilter(JoinPoint joinPoint);
 
     /**
-     * asd
-     * @param joinPoint aasd
-     * @param abstractVerifyProcesses asda
-     * @return das
+     * On the basis of the former through the corresponding logic processing
+     * @param joinPoint Cut - through object
+     * @param abstractVerifyProcesses A child object is validated by the former
+     * @return Returns a data validation exception captured during processing, or null if no exception exists
      */
     public abstract VerifyBaseException coreProcessingMethod(JoinPoint joinPoint, List<AbstractVerifyProcess> abstractVerifyProcesses);
 
