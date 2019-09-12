@@ -4,6 +4,7 @@ import com.coder.framework.validate.annotation.VerifyOrder;
 import com.coder.framework.validate.exception.VerifyBaseException;
 import org.aspectj.lang.JoinPoint;
 
+import java.lang.reflect.Method;
 import java.util.List;
 
 /**
@@ -38,7 +39,7 @@ import java.util.List;
 public class VerifyEntityResolver extends AbstractVerifyProcess {
 
     @Override
-    public boolean methodFilter(JoinPoint joinPoint) {
+    public boolean methodFilter(Method method, Object[] args) {
         return true;
     }
 

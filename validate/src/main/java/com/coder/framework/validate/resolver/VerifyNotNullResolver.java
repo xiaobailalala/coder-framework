@@ -6,6 +6,7 @@ import com.coder.framework.validate.exception.VerifyBaseException;
 import org.aspectj.lang.JoinPoint;
 import org.springframework.util.ObjectUtils;
 
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -42,8 +43,8 @@ import java.util.stream.Collectors;
 public class VerifyNotNullResolver extends AbstractVerifyProcess {
 
     @Override
-    public boolean methodFilter(JoinPoint joinPoint) {
-        List<Object> collect = Arrays.stream(joinPoint.getArgs()).filter((item) -> {
+    public boolean methodFilter(Method method, Object[] args) {
+        List<Object> collect = Arrays.stream(args).filter((item) -> {
             VerifyNotNull verifyNotNull = item.getClass().getDeclaredAnnotation(VerifyNotNull.class);
             return !ObjectUtils.isEmpty(verifyNotNull);
         }).collect(Collectors.toList());
