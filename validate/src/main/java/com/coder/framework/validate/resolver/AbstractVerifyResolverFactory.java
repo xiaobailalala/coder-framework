@@ -4,8 +4,11 @@ import com.coder.framework.validate.annotation.VerifyOrder;
 import com.coder.framework.validate.common.AbstractPackageScanner;
 import com.coder.framework.validate.exception.VerifyBaseException;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.reflect.MemberSignature;
+import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.util.ObjectUtils;
 
+import java.lang.reflect.Method;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
@@ -69,7 +72,7 @@ public abstract class AbstractVerifyResolverFactory {
         abstractVerifyProcessTemps.sort(Comparator.comparingInt(AbstractVerifyProcessTemp::getOrder));
         for (AbstractVerifyProcess abstractVerifyProcess : abstractVerifyProcessTemps.stream()
                 .map(AbstractVerifyProcessTemp::getAbstractVerifyProcess).collect(Collectors.toList())) {
-            if (abstractVerifyProcess.methodFilter(joinPoint)) {
+            if (abstractVerifyProcess.methodFilter(((MethodSignature) joinPoint.getSignature()).getMethod(), joinPoint.getArgs())) {
                 this.abstractVerifyProcesses.add(abstractVerifyProcess);
             }
         }

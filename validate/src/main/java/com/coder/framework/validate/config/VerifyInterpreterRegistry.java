@@ -131,15 +131,6 @@ public class VerifyInterpreterRegistry extends ApplicationObjectSupport implemen
             for (ResponseEntityMode responseEntityMode : ignoreFieldContainer) {
                 this.validResponseEntityField.remove(responseEntityMode.getFieldName());
             }
-
-
-
-            for (Field field : entity.getDeclaredFields()) {
-                field.setAccessible(true);
-                System.out.println(field.getName());
-            }
-            for (Map.Entry<String, Object> stringObjectEntry : fields.entrySet()) {
-                stringObjectEntry.getValue();
             for (Map.Entry<String, Object> field : this.validResponseEntityField.entrySet()) {
                 try {
                     Field declaredField = entity.getDeclaredField(field.getValue().toString());

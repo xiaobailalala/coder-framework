@@ -3,6 +3,7 @@ package com.coder.framework.validate.resolver;
 import com.coder.framework.validate.exception.VerifyBaseException;
 import org.aspectj.lang.JoinPoint;
 
+import java.lang.reflect.Method;
 import java.util.List;
 
 /**
@@ -37,10 +38,11 @@ public abstract class AbstractVerifyProcess {
 
     /**
      * Determine if conditions are met that can be processed using the corresponding annotation
-     * @param joinPoint Cut - through object
+     * @param method Cut - through object method
+     * @param args Cut - through object args
      * @return Returns true, executes the processor, otherwise does not
      */
-    public abstract boolean methodFilter(JoinPoint joinPoint);
+    public abstract boolean methodFilter(Method method, Object[] args);
 
     /**
      * On the basis of the former through the corresponding logic processing
