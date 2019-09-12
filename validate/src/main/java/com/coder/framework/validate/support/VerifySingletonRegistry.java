@@ -37,19 +37,19 @@ import java.util.concurrent.ConcurrentHashMap;
  * @version 1.0
  * @description
  */
-public class VerifySingletonRegistry {
+class VerifySingletonRegistry {
 
     private final Map<String, AbstractVerifyProcess> verifyProcessCache = new ConcurrentHashMap<>(128);
     private final Set<String> registeredVerifyCache = new LinkedHashSet<>(128);
 
-    public AbstractVerifyProcess getSingleton(Class<? extends AbstractVerifyProcess> verifyClazz) {
+    AbstractVerifyProcess getSingleton(Class<? extends AbstractVerifyProcess> verifyClazz) {
         if (ObjectUtils.isEmpty(verifyClazz)) {
             throw new VerifyFrameworkRegistryException("Object must not be null");
         }
         return getSingleton(verifyClazz.getName());
     }
 
-    public AbstractVerifyProcess getSingleton(String verifyName) {
+    AbstractVerifyProcess getSingleton(String verifyName) {
         AbstractVerifyProcess abstractVerifyProcess = this.verifyProcessCache.get(verifyName);
         if (ObjectUtils.isEmpty(abstractVerifyProcess)) {
             throw new VerifyFrameworkRegistryException("The object has not yet been registered");
@@ -57,7 +57,7 @@ public class VerifySingletonRegistry {
         return abstractVerifyProcess;
     }
 
-    public AbstractVerifyProcess registrySingleton(String verifyName, AbstractVerifyProcess singletonObject) {
+    AbstractVerifyProcess registrySingleton(String verifyName, AbstractVerifyProcess singletonObject) {
         AbstractVerifyProcess singleton;
         synchronized (this.verifyProcessCache) {
             singleton = this.verifyProcessCache.get(verifyName);
@@ -78,7 +78,7 @@ public class VerifySingletonRegistry {
         return singletonObject;
     }
 
-    public Set<String> getRegisteredVerifyCache() {
+    Set<String> getRegisteredVerifyCache() {
         return registeredVerifyCache;
     }
 }
