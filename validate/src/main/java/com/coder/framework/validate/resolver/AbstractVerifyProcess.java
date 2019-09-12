@@ -48,7 +48,7 @@ public abstract class AbstractVerifyProcess {
      * On the basis of the former through the corresponding logic processing
      * @param joinPoint Cut - through object
      * @param abstractVerifyProcesses A child object is validated by the former
-     * @return Returns a data validation exception captured during processing, or null if no exception exists
+     * @return Returns a data validation exception captured during processing, or {@code null} if no exception exists
      */
     public abstract VerifyBaseException coreProcessingMethod(JoinPoint joinPoint, List<AbstractVerifyProcess> abstractVerifyProcesses);
 

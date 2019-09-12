@@ -220,9 +220,6 @@ public class VerifyInterpreterRegistry extends ApplicationObjectSupport implemen
 
     @Override
     public void run(String... args) {
-        List<ControllerAdviceBean> annotatedBeans = ControllerAdviceBean.findAnnotatedBeans(Objects.requireNonNull(getApplicationContext()));
-        for (ControllerAdviceBean annotatedBean : annotatedBeans) {
-            System.out.println(Arrays.toString(Objects.requireNonNull(annotatedBean.getBeanType()).getAnnotation(RestControllerAdvice.class).basePackages()));
-        }
+        new VerifyResolverScan();
     }
 }
