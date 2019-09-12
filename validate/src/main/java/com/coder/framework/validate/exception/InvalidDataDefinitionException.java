@@ -1,6 +1,6 @@
 package com.coder.framework.validate.exception;
 
-import com.coder.framework.validate.util.HttpStatus;
+import com.coder.framework.validate.common.HttpStatus;
 
 /**
  * Copyright © 2018 eSunny Info. Developer Stu. All rights reserved.
@@ -30,7 +30,7 @@ import com.coder.framework.validate.util.HttpStatus;
  * @version 1.0
  * @description
  */
-public class InvalidDataDefinitionException extends BaseException {
+public class InvalidDataDefinitionException extends VerifyBaseException {
     public InvalidDataDefinitionException(String message) {
         super(message, HttpStatus.SC_UNAUTHORIZED);
     }

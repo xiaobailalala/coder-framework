@@ -2,8 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="827ce0d0-08f1-4868-ad8b-28c51e8fed4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/VerifyNotNull.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/VerifyOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/common/ResponseBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/common/ResponseBuilderManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/common/ResponseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/common/ResponseEntityMode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/resolver/AbstractVerifyProcess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/resolver/AbstractVerifyResolverFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/resolver/VerifyEntityResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/resolver/VerifyNotNullResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/EnableVerify.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/EnableVerify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/EnableVerifyResponseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/EnableVerifyResponseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/Verify.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/Verify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/aspect/VerifyMethodArgumentResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/resolver/VerifyCoreProcessorResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/config/VerifyInterpreterRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/config/VerifyInterpreterRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/exception/BaseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/exception/VerifyBaseException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/exception/InvalidDataDefinitionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/exception/InvalidDataDefinitionException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/exception/VerifyFrameworkInitializeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/exception/VerifyFrameworkInitializeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/handle/GlobalExceptionHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/handle/GlobalExceptionHandle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/AbstractPackageScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/common/AbstractPackageScanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/HttpStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/common/HttpStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/ResponseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/VerifyEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/ResponseEntityMode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/target/classes/com/coder/framework/validate/annotation/Verify.class" beforeDir="false" afterPath="$PROJECT_DIR$/validate/target/classes/com/coder/framework/validate/annotation/Verify.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/validate/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/validate/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate/target/validate-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/validate/target/validate-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -42,7 +70,7 @@
           <entry key="class" value="3" />
           <entry key="gitignore" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="58" />
+          <entry key="java" value="73" />
           <entry key="xml" value="4" />
         </counts>
       </usages-collector>
@@ -50,7 +78,7 @@
         <counts>
           <entry key="CLASS" value="3" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="58" />
+          <entry key="JAVA" value="73" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="UML" value="1" />
           <entry key="XML" value="4" />
@@ -60,13 +88,13 @@
         <counts>
           <entry key="dummy" value="14" />
           <entry key="gitignore" value="10" />
-          <entry key="java" value="2460" />
+          <entry key="java" value="2537" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2460" />
+          <entry key="JAVA" value="2537" />
           <entry key="PLAIN_TEXT" value="24" />
           <entry key="XML" value="5" />
         </counts>
@@ -78,29 +106,42 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/config/VerifyInterpreterRegistry.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="115" column="42" lean-forward="true" selection-start-line="115" selection-start-column="42" selection-end-line="115" selection-end-column="42" />
+            <state relative-caret-position="2146">
+              <caret line="176" lean-forward="true" selection-start-line="176" selection-end-line="176" />
               <folding>
-                <element signature="docComment;class#VerifyInterpreterRegistry#0" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2310#2311#0" expanded="true" />
+                <element signature="e#2366#2367#0" expanded="true" />
+                <element signature="e#2547#2548#0" expanded="true" />
+                <element signature="e#2598#2599#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/resolver/AbstractVerifyResolverFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="648">
+              <caret line="75" column="72" lean-forward="true" selection-start-line="75" selection-start-column="72" selection-end-line="75" selection-end-column="72" />
+              <folding>
+                <element signature="docComment;class#AbstractVerifyResolverFactory#0" />
+                <element signature="e#1497#2225#0" expanded="true" />
+                <element signature="e#2224#2225#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+        <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/resolver/VerifyEntityResolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+            <state relative-caret-position="469">
+              <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+              <folding>
+                <element signature="e#900#901#0" expanded="true" />
+                <element signature="e#928#929#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,11 +185,15 @@
         <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/exception/InvalidDataDefinitionException.java" />
         <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/EnableVerify.java" />
         <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/VerifyResponseEntity.java" />
-        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/handle/GlobalExceptionHandle.java" />
         <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/ResponseEntityMode.java" />
         <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/EnableVerifyResponseEntity.java" />
-        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/config/VerifyInterpreterRegistry.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/config/VerifyInterpreterRegistry.java" />
+        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/handle/GlobalExceptionHandle.java" />
+        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/resolver/AbstractVerifyResolverFactory.java" />
+        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/resolver/VerifyEntityResolver.java" />
+        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/resolver/VerifyNotNullResolver.java" />
+        <option value="$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/resolver/AbstractVerifyProcess.java" />
       </list>
     </option>
   </component>
@@ -296,7 +341,7 @@
               <item name="coder" type="462c0819:PsiDirectoryNode" />
               <item name="framework" type="462c0819:PsiDirectoryNode" />
               <item name="validate" type="462c0819:PsiDirectoryNode" />
-              <item name="aspect" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="architect" type="b2602c69:ProjectViewProjectNode" />
@@ -348,7 +393,56 @@
               <item name="coder" type="462c0819:PsiDirectoryNode" />
               <item name="framework" type="462c0819:PsiDirectoryNode" />
               <item name="validate" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="resolver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="architect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="architect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.aspectj:aspectjweaver:1.8.13" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="architect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.aspectj:aspectjweaver:1.8.13" type="70bed36:NamedLibraryElementNode" />
+              <item name="aspectjweaver-1.8.13.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="architect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.aspectj:aspectjweaver:1.8.13" type="70bed36:NamedLibraryElementNode" />
+              <item name="aspectjweaver-1.8.13.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="architect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.aspectj:aspectjweaver:1.8.13" type="70bed36:NamedLibraryElementNode" />
+              <item name="aspectjweaver-1.8.13.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="aspectj" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="architect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.aspectj:aspectjweaver:1.8.13" type="70bed36:NamedLibraryElementNode" />
+              <item name="aspectjweaver-1.8.13.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="aspectj" type="462c0819:PsiDirectoryNode" />
+              <item name="lang" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="architect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.aspectj:aspectjweaver:1.8.13" type="70bed36:NamedLibraryElementNode" />
+              <item name="aspectjweaver-1.8.13.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="aspectj" type="462c0819:PsiDirectoryNode" />
+              <item name="lang" type="462c0819:PsiDirectoryNode" />
+              <item name="reflect" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -362,7 +456,7 @@
     <property name="SearchEverywhereHistoryKey" value="ExceptionHandlerExceptionResolver&#9;PSI&#9;JAVA://org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration.EnableWebMvcConfiguration#createExceptionHandlerExceptionResolver&#10;lombok&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568133552245" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568232782060" />
     <property name="last_opened_file_path" value="C:/Program Files/Java/jdk1.8.0_131/bin/jvisualvm.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -424,12 +518,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41566000" />
+    <option name="totallyTimeSpent" value="46493000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49916804" visible="true" weight="0.2496" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49916804" visible="true" weight="0.2496" />
       <window_info id="Structure" order="1" sideWeight="0.50083196" side_tool="true" weight="0.2496" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" side_tool="true" />
@@ -446,10 +540,10 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32998884" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5002667" side_tool="true" visible="true" weight="0.24414715" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5002667" side_tool="true" weight="0.24414715" />
       <window_info anchor="bottom" id="Run with VisualVM" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49973333" visible="true" weight="0.24414715" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49973333" weight="0.24414715" />
       <window_info anchor="bottom" id="JRebel Executor" order="13" />
       <window_info anchor="bottom" id="JRebel Console" order="14" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="15" weight="0.32887402" />
@@ -656,20 +750,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/aspect/VerifyMethodArgumentResolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="71" column="20" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/exception/BaseException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="29" column="3" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/aspect/VerifyMethodArgumentResolver.java" />
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/exception/BaseException.java" />
     <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/exception/InvalidDataDefinitionException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
@@ -692,37 +774,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/handle/GlobalExceptionHandle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/AbstractPackageScanner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="45" column="7" lean-forward="true" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/HttpStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="152" column="60" lean-forward="true" selection-start-line="152" selection-start-column="60" selection-end-line="152" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/ResponseEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="docComment;class#ResponseEntity#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/AbstractPackageScanner.java" />
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/HttpStatus.java" />
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/ResponseEntity.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/Map.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
@@ -730,33 +784,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/ResponseEntityMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-          <folding>
-            <element signature="e#452#453#0" expanded="true" />
-            <element signature="e#484#485#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/util/ResponseEntityMode.java" />
     <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/annotation/EnableVerifyResponseEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="41" column="22" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/config/VerifyInterpreterRegistry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="115" column="42" lean-forward="true" selection-start-line="115" selection-start-column="42" selection-end-line="115" selection-end-column="42" />
-          <folding>
-            <element signature="docComment;class#VerifyInterpreterRegistry#0" />
           </folding>
         </state>
       </provider>
@@ -770,8 +804,111 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        <state relative-caret-position="837">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/handle/GlobalExceptionHandle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="59" column="39" lean-forward="true" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
+          <folding>
+            <element signature="docComment;class#GlobalExceptionHandle#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/exception/VerifyBaseException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/config/VerifyInterpreterRegistry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2146">
+          <caret line="176" lean-forward="true" selection-start-line="176" selection-end-line="176" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2310#2311#0" expanded="true" />
+            <element signature="e#2366#2367#0" expanded="true" />
+            <element signature="e#2547#2548#0" expanded="true" />
+            <element signature="e#2598#2599#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/aspectj/aspectjweaver/1.8.13/aspectjweaver-1.8.13-sources.jar!/org/aspectj/runtime/reflect/MemberSignatureImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/aspectj/aspectjweaver/1.8.13/aspectjweaver-1.8.13-sources.jar!/org/aspectj/lang/reflect/MemberSignature.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/aspectj/aspectjweaver/1.8.13/aspectjweaver-1.8.13-sources.jar!/org/aspectj/lang/Signature.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/aspectj/aspectjweaver/1.8.13/aspectjweaver-1.8.13-sources.jar!/org/aspectj/lang/JoinPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="82" column="12" lean-forward="true" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/aspectj/aspectjweaver/1.8.13/aspectjweaver-1.8.13-sources.jar!/org/aspectj/lang/reflect/MethodSignature.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/resolver/AbstractVerifyProcess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="41" column="44" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/resolver/VerifyNotNullResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="50" column="35" lean-forward="true" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/resolver/VerifyEntityResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+          <folding>
+            <element signature="e#900#901#0" expanded="true" />
+            <element signature="e#928#929#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validate/src/main/java/com/coder/framework/validate/resolver/AbstractVerifyResolverFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="75" column="72" lean-forward="true" selection-start-line="75" selection-start-column="72" selection-end-line="75" selection-end-column="72" />
+          <folding>
+            <element signature="docComment;class#AbstractVerifyResolverFactory#0" />
+            <element signature="e#1497#2225#0" expanded="true" />
+            <element signature="e#2224#2225#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

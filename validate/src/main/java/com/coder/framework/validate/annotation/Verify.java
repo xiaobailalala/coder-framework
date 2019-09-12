@@ -7,6 +7,6 @@ import java.lang.annotation.*;
 @Documented
 public @interface Verify {
 
-    
+    String msg() default "";
 
 }

@@ -1,13 +1,14 @@
-package com.coder.framework.validate.aspect;
+package com.coder.framework.validate.resolver;
 
-import com.coder.framework.validate.annotation.EnableVerifyResponseEntity;
+import com.coder.framework.validate.annotation.Verify;
 import com.coder.framework.validate.exception.InvalidDataDefinitionException;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.util.ObjectUtils;
 
-import java.lang.annotation.Annotation;
 import java.util.Arrays;
 
 /**
@@ -39,30 +40,31 @@ import java.util.Arrays;
  * @description TODO
  */
 @Aspect
-public class VerifyMethodArgumentResolver {
+public class VerifyCoreProcessorResolver {
 
     @Pointcut("@annotation(com.coder.framework.validate.annotation.Verify)")
     public void doAspect() {}
 
-    @Pointcut("@annotation(org.springframework.web.bind.annotation.ControllerAdvice)")
-    public void doEnableVerify() {}
-
     @Before("doAspect()")
     public void doBefore(JoinPoint joinPoint) {
-        for (Object arg : joinPoint.getArgs()) {
-            Class aClass = arg.getClass();
+        if (!ObjectUtils.isEmpty(joinPoint.getArgs())) {
+            new AbstractVerifyResolverFactory() {
+                @Override
+                public void processAndGetResult(RuntimeException throwable) {
+                    throw throwable;
+                }
+            }.createVerifyResolverFactory(joinPoint);
 
-            if (arg.toString().equals("1")) {
-                throw new InvalidDataDefinitionException("hahaha");
-            }
-            Annotation annotation = aClass.getAnnotation(EnableVerifyResponseEntity.class);
+
+
+//            Verify verify = ((MethodSignature) joinPoint.getSignature()).getMethod().getAnnotation(Verify.class);
+//            for (Object arg : joinPoint.getArgs()) {
+//                if (arg.toString().equals("1")) {
+//                    throw new InvalidDataDefinitionException(verify.msg());
+//                }
+//            }
+//            System.out.println(Arrays.toString(joinPoint.getArgs()));
         }
-        System.out.println(Arrays.toString(joinPoint.getArgs()));
-    }
-
-    @Before("doEnableVerify()")
-    public void doEnableVerify(JoinPoint joinPoint) {
-        System.out.println(12312312);
     }
 
     private boolean isPrimitive(Object obj) {

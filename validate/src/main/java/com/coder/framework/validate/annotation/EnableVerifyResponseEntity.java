@@ -1,6 +1,6 @@
 package com.coder.framework.validate.annotation;
 
-import com.coder.framework.validate.util.ResponseEntityMode;
+import com.coder.framework.validate.common.ResponseEntityMode;
 
 import java.lang.annotation.*;
 

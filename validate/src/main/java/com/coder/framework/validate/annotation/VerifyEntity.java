@@ -1,4 +1,6 @@
-package com.coder.framework.validate.util;
+package com.coder.framework.validate.annotation;
+
+import java.lang.annotation.*;
 
 /**
  * Copyright © 2018 eSunny Info. Developer Stu. All rights reserved.
@@ -24,13 +26,12 @@ package com.coder.framework.validate.util;
  * 　　　┗┻┛　┗┻┛
  *
  * @author zpx
- * Build File @date: 2019/9/7 11:48
+ * Build File @date: 2019/9/10 10:38
  * @version 1.0
- * @description TODO
+ * @description
  */
-public class ResponseEntity {
-    private String message;
-    private int status;
-    private Object data;
-    private boolean condition;
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface VerifyEntity {
 }

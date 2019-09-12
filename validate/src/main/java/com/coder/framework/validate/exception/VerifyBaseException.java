@@ -28,7 +28,7 @@ package com.coder.framework.validate.exception;
  * @version 1.0
  * @description
  */
-public class BaseException extends RuntimeException {
+public class VerifyBaseException extends RuntimeException {
 
     private int status = 200;
 
@@ -40,27 +40,27 @@ public class BaseException extends RuntimeException {
         this.status = status;
     }
 
-    public BaseException() {
+    public VerifyBaseException() {
     }
 
-    public BaseException(String message,int status) {
+    public VerifyBaseException(String message, int status) {
         super(message);
         this.status = status;
     }
 
-    public BaseException(String message) {
+    public VerifyBaseException(String message) {
         super(message);
     }
 
-    public BaseException(String message, Throwable cause) {
+    public VerifyBaseException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public BaseException(Throwable cause) {
+    public VerifyBaseException(Throwable cause) {
         super(cause);
     }
 
-    public BaseException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    public VerifyBaseException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
 
