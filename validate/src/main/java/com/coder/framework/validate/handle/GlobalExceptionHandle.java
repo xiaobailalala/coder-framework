@@ -1,22 +1,16 @@
 package com.coder.framework.validate.handle;
 
 import com.coder.framework.validate.common.ResponseBuilderManager;
-import com.coder.framework.validate.exception.InvalidDataDefinitionException;
+import com.coder.framework.validate.exception.verification.InvalidDataDefinitionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.context.support.ApplicationObjectSupport;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
 
 /**
  * Copyright © 2018 eSunny Info. Developer Stu. All rights reserved.
