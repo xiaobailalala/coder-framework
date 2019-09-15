@@ -34,7 +34,7 @@ import java.util.*;
  */
 class VerifyRegistrySupport {
 
-    private static Map<String, VerifySingletonRegistry> verifySingletonRegistryCache = new HashMap<>(8);
+    private static Map<String, VerifySingletonRegistryFactory> verifySingletonRegistryCache = new HashMap<>(8);
 
     static AbstractVerifyProcess getVerifyProcess(Class<? extends AbstractVerifyProcess> verifyClazz) {
         return getVerifyRegistry().getSingleton(verifyClazz);
@@ -65,12 +65,12 @@ class VerifyRegistrySupport {
     }
 
     @SuppressWarnings("all")
-    private static VerifySingletonRegistry getVerifyRegistry() {
-        VerifySingletonRegistry verifySingletonRegistry = verifySingletonRegistryCache.get(VerifySingletonRegistry.class.getName());
+    private static VerifySingletonRegistryFactory getVerifyRegistry() {
+        VerifySingletonRegistryFactory verifySingletonRegistry = verifySingletonRegistryCache.get(VerifySingletonRegistryFactory.class.getName());
         if (verifySingletonRegistry == null) {
             synchronized (VerifyRegistrySupport.class) {
                 if (verifySingletonRegistry == null) {
-                    verifySingletonRegistry = new VerifySingletonRegistry();
+                    verifySingletonRegistry = new VerifySingletonRegistryFactory();
                     verifySingletonRegistryCache.put(verifySingletonRegistry.getClass().getName(), verifySingletonRegistry);
                 }
             }

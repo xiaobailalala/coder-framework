@@ -3,6 +3,7 @@ package com.coder.framework.validate.config;
 import com.coder.framework.validate.resolver.AbstractVerifyProcess;
 import com.coder.framework.validate.support.AbstractVerifyRegistrySupport;
 import com.coder.framework.validate.support.AbstractVerifyResolverScanSupport;
+import com.coder.framework.validate.support.VerifyResolverProxyFactory;
 
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -59,8 +60,10 @@ public class VerifyResolverScan extends AbstractVerifyResolverScanSupport implem
     }
 
     private void registryVerifyResolver() {
+        VerifyResolverProxyFactory proxyFactory = VerifyResolverProxyFactory.initProxyFactory();
         for (AbstractVerifyProcess abstractVerifyProcess : this.abstractVerifyProcesses) {
-            registryVerifyProcess(abstractVerifyProcess);
+            AbstractVerifyProcess proxyInstance = proxyFactory.optionTargetProcess(abstractVerifyProcess).getProxyInstance();
+            registryVerifyProcess(proxyInstance);
         }
     }
 

@@ -37,7 +37,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @version 1.0
  * @description
  */
-class VerifySingletonRegistry {
+class VerifySingletonRegistryFactory {
 
     private final Map<String, AbstractVerifyProcess> verifyProcessCache = new ConcurrentHashMap<>(128);
     private final Set<String> registeredVerifyCache = new LinkedHashSet<>(128);
