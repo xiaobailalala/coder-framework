@@ -1,9 +1,8 @@
 package com.coder.framework.validate.config;
 
-import com.coder.framework.validate.resolver.AbstractVerifyProcess;
+import com.coder.framework.validate.handle.AbstractVerifyAdapter;
 import com.coder.framework.validate.support.AbstractVerifyRegistrySupport;
 import com.coder.framework.validate.support.AbstractVerifyResolverScanSupport;
-import com.coder.framework.validate.support.VerifyResolverProxyFactory;
 
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -40,10 +39,10 @@ import java.util.stream.Collectors;
  */
 public class VerifyResolverScan extends AbstractVerifyResolverScanSupport implements AbstractVerifyRegistrySupport {
 
-    private List<AbstractVerifyProcess> abstractVerifyProcesses = new LinkedList<>();
+    private List<AbstractVerifyAdapter> abstractVerifyAdapters = new LinkedList<>();
 
     @Override
-    protected void scanResultCallback(int order, AbstractVerifyProcess verifyProcess) {
+    protected void scanResultCallback(int order, AbstractVerifyAdapter verifyProcess) {
         super.abstractVerifyProcessTemps.add(new AbstractVerifyProcessTemp(verifyProcess, order));
     }
 
@@ -53,17 +52,15 @@ public class VerifyResolverScan extends AbstractVerifyResolverScanSupport implem
     }
 
     private void sortVerifyResolver() {
-        this.abstractVerifyProcesses.addAll(super.abstractVerifyProcessTemps.stream()
+        this.abstractVerifyAdapters.addAll(super.abstractVerifyProcessTemps.stream()
                 .sorted(Comparator.comparingInt(AbstractVerifyProcessTemp::getOrder))
-                .map(AbstractVerifyProcessTemp::getAbstractVerifyProcess)
+                .map(AbstractVerifyProcessTemp::getAbstractVerifyAdapter)
                 .collect(Collectors.toList()));
     }
 
     private void registryVerifyResolver() {
-        VerifyResolverProxyFactory proxyFactory = VerifyResolverProxyFactory.initProxyFactory();
-        for (AbstractVerifyProcess abstractVerifyProcess : this.abstractVerifyProcesses) {
-            AbstractVerifyProcess proxyInstance = proxyFactory.optionTargetProcess(abstractVerifyProcess).getProxyInstance();
-            registryVerifyProcess(proxyInstance);
+        for (AbstractVerifyAdapter abstractVerifyAdapter : this.abstractVerifyAdapters) {
+            registryVerifyProcess(abstractVerifyAdapter);
         }
     }
 

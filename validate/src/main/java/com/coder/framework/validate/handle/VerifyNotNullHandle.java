@@ -1,4 +1,4 @@
-package com.coder.framework.validate.resolver;
+package com.coder.framework.validate.handle;
 
 import com.coder.framework.validate.annotation.VerifyNotNull;
 import com.coder.framework.validate.annotation.VerifyOrder;
@@ -6,6 +6,7 @@ import com.coder.framework.validate.exception.VerifyBaseException;
 import org.aspectj.lang.JoinPoint;
 import org.springframework.util.ObjectUtils;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
@@ -40,19 +41,17 @@ import java.util.stream.Collectors;
  * @description
  */
 @VerifyOrder(1)
-public class VerifyNotNullResolver extends AbstractVerifyProcess {
+public class VerifyNotNullHandle implements AbstractVerifyAdapter {
 
     @Override
-    public boolean methodFilter(Method method, Object[] args) {
-        List<Object> collect = Arrays.stream(args).filter((item) -> {
-            VerifyNotNull verifyNotNull = item.getClass().getDeclaredAnnotation(VerifyNotNull.class);
-            return !ObjectUtils.isEmpty(verifyNotNull);
-        }).collect(Collectors.toList());
-        return collect.size() != 0;
+    public boolean methodFilter(Method method, Object arg, Field field) {
+        return !ObjectUtils.isEmpty(arg.getClass().getDeclaredAnnotation(VerifyNotNull.class)) ||
+                !ObjectUtils.isEmpty(field.getClass().getDeclaredAnnotation(VerifyNotNull.class));
     }
 
     @Override
-    public VerifyBaseException coreProcessingMethod(JoinPoint joinPoint, List<AbstractVerifyProcess> abstractVerifyProcesses) {
+    public VerifyBaseException coreProcessingMethod(Method method, Object arg, Field field) {
+
         return null;
     }
 }

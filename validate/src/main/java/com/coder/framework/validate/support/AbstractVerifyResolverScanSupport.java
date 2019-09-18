@@ -2,7 +2,7 @@ package com.coder.framework.validate.support;
 
 import com.coder.framework.validate.annotation.VerifyOrder;
 import com.coder.framework.validate.common.AbstractPackageScanner;
-import com.coder.framework.validate.resolver.AbstractVerifyProcess;
+import com.coder.framework.validate.handle.AbstractVerifyAdapter;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -44,7 +44,7 @@ public abstract class AbstractVerifyResolverScanSupport {
      * @param order Exception resolution handler load order, the lower the order, the higher the identity
      * @param verifyProcess Exception resolution handler
      */
-    protected abstract void scanResultCallback(int order, AbstractVerifyProcess verifyProcess);
+    protected abstract void scanResultCallback(int order, AbstractVerifyAdapter verifyProcess);
 
     protected AbstractVerifyResolverScanSupport() {
         scanAccordingToAbstractVerifyProcess();
@@ -54,32 +54,32 @@ public abstract class AbstractVerifyResolverScanSupport {
     private void scanAccordingToAbstractVerifyProcess() {
         new AbstractPackageScanner() {
             @Override
-            public void dealClass(Class<?> klass) {
-                if (klass.getSuperclass().equals(AbstractVerifyProcess.class)) {
-                    VerifyOrder declaredAnnotation = klass.getDeclaredAnnotation(VerifyOrder.class);
+            public void dealClass(Class<?> clazz) {
+                if (AbstractVerifyAdapter.class.isAssignableFrom(clazz)) {
+                    VerifyOrder declaredAnnotation = clazz.getDeclaredAnnotation(VerifyOrder.class);
                     try {
-                        scanResultCallback(declaredAnnotation.value(), (AbstractVerifyProcess) klass.newInstance());
+                        scanResultCallback(declaredAnnotation.value(), (AbstractVerifyAdapter) clazz.newInstance());
                     } catch (InstantiationException | IllegalAccessException e) {
                         e.printStackTrace();
                     }
                 }
             }
-        }.packageScanner(AbstractVerifyProcess.class);
+        }.packageScanner(AbstractVerifyAdapter.class);
     }
 
     private void otherScan() {}
 
     protected class AbstractVerifyProcessTemp {
-        private AbstractVerifyProcess abstractVerifyProcess;
+        private AbstractVerifyAdapter abstractVerifyAdapter;
         private int order;
 
-        public AbstractVerifyProcessTemp(AbstractVerifyProcess abstractVerifyProcess, int order) {
-            this.abstractVerifyProcess = abstractVerifyProcess;
+        public AbstractVerifyProcessTemp(AbstractVerifyAdapter abstractVerifyAdapter, int order) {
+            this.abstractVerifyAdapter = abstractVerifyAdapter;
             this.order = order;
         }
 
-        public AbstractVerifyProcess getAbstractVerifyProcess() {
-            return abstractVerifyProcess;
+        public AbstractVerifyAdapter getAbstractVerifyAdapter() {
+            return abstractVerifyAdapter;
         }
 
         public int getOrder() {

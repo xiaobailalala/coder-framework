@@ -1,12 +1,11 @@
-package com.coder.framework.validate.support;
+package com.coder.framework.validate.proxy.cglib;
 
-import com.coder.framework.validate.resolver.AbstractVerifyProcess;
+import com.coder.framework.validate.handle.AbstractVerifyAdapter;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
 
 import java.lang.reflect.Method;
-import java.util.Arrays;
 
 /**
  * Copyright © 2018 eSunny Info. Developer Stu. All rights reserved.
@@ -38,7 +37,7 @@ import java.util.Arrays;
  */
 public class VerifyResolverProxyFactory implements MethodInterceptor {
 
-    private AbstractVerifyProcess target;
+    private AbstractVerifyAdapter target;
 
     private VerifyResolverProxyFactory() {
     }
@@ -47,21 +46,20 @@ public class VerifyResolverProxyFactory implements MethodInterceptor {
         return new VerifyResolverProxyFactory();
     }
 
-    public VerifyResolverProxyFactory optionTargetProcess(AbstractVerifyProcess target) {
+    public VerifyResolverProxyFactory optionTargetProcess(AbstractVerifyAdapter target) {
         this.target = target;
         return this;
     }
 
-    public AbstractVerifyProcess getProxyInstance() {
+    public AbstractVerifyAdapter getProxyInstance() {
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(target.getClass());
         enhancer.setCallback(this);
-        return (AbstractVerifyProcess) enhancer.create();
+        return (AbstractVerifyAdapter) enhancer.create();
     }
 
     @Override
     public Object intercept(Object arg0, Method method, Object[] args, MethodProxy arg3) throws Throwable {
-        System.out.println(Arrays.toString(args));
         return method.invoke(target, args);
     }
 

@@ -4,6 +4,8 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.ObjectUtils;
 
 /**
@@ -37,28 +39,15 @@ import org.springframework.util.ObjectUtils;
 @Aspect
 public class VerifyCoreProcessorResolver {
 
+    private static final Logger logger = LoggerFactory.getLogger(VerifyCoreProcessorResolver.class);
+
     @Pointcut("@annotation(com.coder.framework.validate.annotation.Verify)")
     public void doAspect() {}
 
     @Before("doAspect()")
     public void doBefore(JoinPoint joinPoint) {
         if (!ObjectUtils.isEmpty(joinPoint.getArgs())) {
-            new AbstractVerifyResolverFactory() {
-                @Override
-                public void processAndGetResult(RuntimeException throwable) {
-                    throw throwable;
-                }
-            }.createVerifyResolverFactory(joinPoint);
-
-
-
-//            Verify verify = ((MethodSignature) joinPoint.getSignature()).getMethod().getAnnotation(Verify.class);
-//            for (Object arg : joinPoint.getArgs()) {
-//                if (arg.toString().equals("1")) {
-//                    throw new InvalidDataDefinitionException(verify.msg());
-//                }
-//            }
-//            System.out.println(Arrays.toString(joinPoint.getArgs()));
+            new AbstractVerifyResolverFactory().createVerifyResolverFactory(joinPoint);
         }
     }
 

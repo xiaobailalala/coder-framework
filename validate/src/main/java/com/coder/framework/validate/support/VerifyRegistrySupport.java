@@ -1,7 +1,8 @@
 package com.coder.framework.validate.support;
 
-import com.coder.framework.validate.resolver.AbstractVerifyProcess;
+import com.coder.framework.validate.handle.AbstractVerifyAdapter;
 
+import java.lang.reflect.Field;
 import java.util.*;
 
 /**
@@ -36,32 +37,66 @@ class VerifyRegistrySupport {
 
     private static Map<String, VerifySingletonRegistryFactory> verifySingletonRegistryCache = new HashMap<>(8);
 
-    static AbstractVerifyProcess getVerifyProcess(Class<? extends AbstractVerifyProcess> verifyClazz) {
-        return getVerifyRegistry().getSingleton(verifyClazz);
+    static AbstractVerifyAdapter getVerifyProcessTarget(Class<? extends AbstractVerifyAdapter> verifyClazz) {
+        return getVerifyRegistry().getSingletonTarget(verifyClazz);
     }
 
-    static AbstractVerifyProcess getVerifyProcess(String verifyName) {
-        return getVerifyRegistry().getSingleton(verifyName);
+    static AbstractVerifyAdapter getVerifyProcessTarget(String verifyName) {
+        return getVerifyRegistry().getSingletonTarget(verifyName);
     }
 
-    static AbstractVerifyProcess registryVerifyProcess(String verifyName, AbstractVerifyProcess singletonObject) {
-        return getVerifyRegistry().registrySingleton(verifyName, singletonObject);
+    static AbstractVerifyAdapter getVerifyProcessProxy(Class<? extends AbstractVerifyAdapter> verifyClazz) {
+        return getVerifyRegistry().getSingletonProxy(verifyClazz);
     }
 
-    static void registryVerifyProcess(AbstractVerifyProcess singletonObject) {
-        getVerifyRegistry().registrySingleton(singletonObject.getClass().getName(), singletonObject);
+    static AbstractVerifyAdapter getVerifyProcessProxy(String verifyName) {
+        return getVerifyRegistry().getSingletonProxy(verifyName);
     }
 
-    static Set<String> getVerifyProcessName() {
+    static AbstractVerifyAdapter registryVerifyProcess(String verifyName, AbstractVerifyAdapter singletonObject) {
+        return getVerifyRegistry().registrySingletonTarget(verifyName, singletonObject);
+    }
+
+    static void registryVerifyProcess(AbstractVerifyAdapter singletonObject) {
+        getVerifyRegistry().registrySingletonTarget(singletonObject.getClass().getName(), singletonObject);
+    }
+
+    static Set<Class<? extends AbstractVerifyAdapter>> getVerifyProcessName() {
         return getVerifyRegistry().getRegisteredVerifyCache();
     }
 
-    static List<AbstractVerifyProcess> getVerifyProcessInstance() {
-        List<AbstractVerifyProcess> verifyProcesses = new LinkedList<>();
-        for (String verify : getVerifyProcessName()) {
-            verifyProcesses.add(getVerifyProcess(verify));
+    static List<AbstractVerifyAdapter> getVerifyProcessTargetInstance() {
+        List<AbstractVerifyAdapter> verifyProcesses = new LinkedList<>();
+        for (Class<? extends AbstractVerifyAdapter> verify : getVerifyProcessName()) {
+            verifyProcesses.add(getVerifyProcessTarget(verify));
         }
         return verifyProcesses;
+    }
+
+    static List<AbstractVerifyAdapter> getVerifyProcessProxyInstance() {
+        List<AbstractVerifyAdapter> verifyProcesses = new LinkedList<>();
+        for (Class<? extends AbstractVerifyAdapter> verify : getVerifyProcessName()) {
+            verifyProcesses.add(getVerifyProcessProxy(verify));
+        }
+        return verifyProcesses;
+    }
+
+    static AbstractVerifyAdapter getTarget(AbstractVerifyAdapter proxy) {
+        AbstractVerifyAdapter targetInstance = null;
+        try {
+            Field field = proxy.getClass().getSuperclass().getDeclaredField("h");
+            field.setAccessible(true);
+            Object proxyInstance = field.get(proxy);
+            Field targetField = proxyInstance.getClass().getDeclaredField("arg$1");
+            targetField.setAccessible(true);
+            Object target = targetField.get(proxyInstance);
+            Field resField = target.getClass().getDeclaredField("target");
+            resField.setAccessible(true);
+            targetInstance = (AbstractVerifyAdapter) resField.get(target);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        return targetInstance;
     }
 
     @SuppressWarnings("all")

@@ -1,9 +1,10 @@
-package com.coder.framework.validate.resolver;
+package com.coder.framework.validate.handle;
 
 import com.coder.framework.validate.annotation.VerifyOrder;
 import com.coder.framework.validate.exception.VerifyBaseException;
 import org.aspectj.lang.JoinPoint;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.List;
 
@@ -36,15 +37,15 @@ import java.util.List;
  * @description
  */
 @VerifyOrder(2)
-public class VerifyEntityResolver extends AbstractVerifyProcess {
+public class VerifyEntityHandle implements AbstractVerifyAdapter {
 
     @Override
-    public boolean methodFilter(Method method, Object[] args) {
+    public boolean methodFilter(Method method, Object arg, Field field) {
         return true;
     }
 
     @Override
-    public VerifyBaseException coreProcessingMethod(JoinPoint joinPoint, List<AbstractVerifyProcess> abstractVerifyProcesses) {
+    public VerifyBaseException coreProcessingMethod(Method method, Object arg, Field field) {
         return null;
     }
 }

@@ -1,7 +1,8 @@
 package com.coder.framework.validate.support;
 
 import com.coder.framework.validate.exception.VerifyFrameworkRegistryException;
-import com.coder.framework.validate.resolver.AbstractVerifyProcess;
+import com.coder.framework.validate.proxy.dynamic.VerifyResolverProxyFactory;
+import com.coder.framework.validate.handle.AbstractVerifyAdapter;
 import org.springframework.util.ObjectUtils;
 
 import java.util.LinkedHashSet;
@@ -39,26 +40,42 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 class VerifySingletonRegistryFactory {
 
-    private final Map<String, AbstractVerifyProcess> verifyProcessCache = new ConcurrentHashMap<>(128);
-    private final Set<String> registeredVerifyCache = new LinkedHashSet<>(128);
+    private final Map<String, AbstractVerifyAdapter> verifyProcessCache = new ConcurrentHashMap<>(128);
+    private final Map<String, AbstractVerifyAdapter> proxyVerifyProcessCache = new ConcurrentHashMap<>(128);
+    private final Set<Class<? extends AbstractVerifyAdapter>> registeredVerifyCache = new LinkedHashSet<>(128);
 
-    AbstractVerifyProcess getSingleton(Class<? extends AbstractVerifyProcess> verifyClazz) {
+    AbstractVerifyAdapter getSingletonTarget(Class<? extends AbstractVerifyAdapter> verifyClazz) {
         if (ObjectUtils.isEmpty(verifyClazz)) {
             throw new VerifyFrameworkRegistryException("Object must not be null");
         }
-        return getSingleton(verifyClazz.getName());
+        return getSingletonTarget(verifyClazz.getName());
     }
 
-    AbstractVerifyProcess getSingleton(String verifyName) {
-        AbstractVerifyProcess abstractVerifyProcess = this.verifyProcessCache.get(verifyName);
-        if (ObjectUtils.isEmpty(abstractVerifyProcess)) {
+    AbstractVerifyAdapter getSingletonTarget(String verifyName) {
+        AbstractVerifyAdapter abstractVerifyAdapter = this.verifyProcessCache.get(verifyName);
+        if (ObjectUtils.isEmpty(abstractVerifyAdapter)) {
             throw new VerifyFrameworkRegistryException("The object has not yet been registered");
         }
-        return abstractVerifyProcess;
+        return abstractVerifyAdapter;
     }
 
-    AbstractVerifyProcess registrySingleton(String verifyName, AbstractVerifyProcess singletonObject) {
-        AbstractVerifyProcess singleton;
+    AbstractVerifyAdapter getSingletonProxy(Class<? extends AbstractVerifyAdapter> verifyClazz) {
+        if (ObjectUtils.isEmpty(verifyClazz)) {
+            throw new VerifyFrameworkRegistryException("Object must not be null");
+        }
+        return getSingletonProxy(verifyClazz.getName());
+    }
+
+    AbstractVerifyAdapter getSingletonProxy(String verifyName) {
+        AbstractVerifyAdapter abstractVerifyAdapter = this.proxyVerifyProcessCache.get(verifyName);
+        if (ObjectUtils.isEmpty(abstractVerifyAdapter)) {
+            throw new VerifyFrameworkRegistryException("The object has not yet been registered");
+        }
+        return abstractVerifyAdapter;
+    }
+
+    AbstractVerifyAdapter registrySingletonTarget(String verifyName, AbstractVerifyAdapter singletonObject) {
+        AbstractVerifyAdapter singleton;
         synchronized (this.verifyProcessCache) {
             singleton = this.verifyProcessCache.get(verifyName);
             if (singleton != null) {
@@ -70,15 +87,17 @@ class VerifySingletonRegistryFactory {
         return singleton;
     }
 
-    private AbstractVerifyProcess addSingleton(String verifyName, AbstractVerifyProcess singletonObject) {
+    private AbstractVerifyAdapter addSingleton(String verifyName, AbstractVerifyAdapter singletonObject) {
+        VerifyResolverProxyFactory proxyFactory = VerifyResolverProxyFactory.initProxyFactory();
         synchronized (this.verifyProcessCache) {
             this.verifyProcessCache.put(verifyName, singletonObject);
-            this.registeredVerifyCache.add(verifyName);
+            this.registeredVerifyCache.add(singletonObject.getClass());
+            this.proxyVerifyProcessCache.put(verifyName, proxyFactory.optionTargetProcess(singletonObject).getProxyInstance());
         }
         return singletonObject;
     }
 
-    Set<String> getRegisteredVerifyCache() {
+    Set<Class<? extends AbstractVerifyAdapter>> getRegisteredVerifyCache() {
         return registeredVerifyCache;
     }
 }

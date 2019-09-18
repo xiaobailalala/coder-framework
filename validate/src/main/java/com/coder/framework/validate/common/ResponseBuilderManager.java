@@ -52,8 +52,16 @@ public class ResponseBuilderManager implements ApplicationContextAware {
             try {
                 Class<?> responseEntity = registry.getResponseEntity();
                 Field field = responseEntity.getDeclaredField(entry.getValue().toString());
-                responseEntity.getDeclaredMethod(generatorGetMethodName(entry.getValue().toString()));
                 responseEntity.getDeclaredMethod(generatorSetMethodName(entry.getValue().toString()), field.getType());
+                try {
+                    responseEntity.getDeclaredMethod(generatorGetMethodName(entry.getValue().toString()));
+                } catch (NoSuchMethodException e) {
+                    try {
+                        responseEntity.getDeclaredMethod(generatorBooleanMethodName(entry.getValue().toString()));
+                    } catch (NoSuchMethodException ex) {
+                        throw new VerifyFrameworkInitializeException("The response class does not provide a get or set method for a [" + entry.getValue() + "] field.");
+                    }
+                }
             } catch (NoSuchMethodException | NoSuchFieldException e) {
                 throw new VerifyFrameworkInitializeException("The response class does not provide a get or set method for a [" + entry.getValue() + "] field.");
             }
@@ -70,6 +78,10 @@ public class ResponseBuilderManager implements ApplicationContextAware {
 
     private String generatorGetMethodName(String fieldName) {
         return "get" + (fieldName.charAt(0) + "").toUpperCase() + fieldName.substring(1);
+    }
+
+    private String generatorBooleanMethodName(String fieldName) {
+        return "is" + (fieldName.charAt(0) + "").toUpperCase() + fieldName.substring(1);
     }
 
     private String generatorSetMethodName(String fieldName) {

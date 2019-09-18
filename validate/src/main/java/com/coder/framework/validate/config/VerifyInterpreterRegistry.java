@@ -2,12 +2,13 @@ package com.coder.framework.validate.config;
 
 import com.coder.framework.validate.annotation.EnableVerify;
 import com.coder.framework.validate.annotation.EnableVerifyResponseEntity;
-import com.coder.framework.validate.resolver.VerifyCoreProcessorResolver;
 import com.coder.framework.validate.common.ResponseBuilderManager;
-import com.coder.framework.validate.exception.VerifyFrameworkInitializeException;
-import com.coder.framework.validate.handle.GlobalExceptionHandle;
 import com.coder.framework.validate.common.ResponseEntity;
 import com.coder.framework.validate.common.ResponseEntityMode;
+import com.coder.framework.validate.exception.VerifyFrameworkInitializeException;
+import com.coder.framework.validate.exception.handle.GlobalExceptionHandle;
+import com.coder.framework.validate.proxy.dynamic.VerifyResolverProxyFactory;
+import com.coder.framework.validate.resolver.VerifyCoreProcessorResolver;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.DependsOn;
@@ -17,11 +18,11 @@ import org.springframework.lang.Nullable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import org.springframework.web.method.ControllerAdviceBean;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.net.URL;
 import java.util.*;
@@ -110,10 +111,24 @@ public class VerifyInterpreterRegistry extends ApplicationObjectSupport implemen
                     responseEntity = checkResponseEntityValidity(enableVerifyResponseEntity, entity);
                 }
             }
+            this.validResponseEntityField = getDefaultValidResponseEntityField();
         }
         if (ObjectUtils.isEmpty(responseEntity)) {
             responseEntity = ResponseEntity.class;
         }
+    }
+
+    private Map<String, Object> getDefaultValidResponseEntityField() {
+        Class clazz = EnableVerifyResponseEntity.class;
+        Method[] declaredMethods = clazz.getDeclaredMethods();
+        Map<String, Object> defaultValidResponseEntityField = new HashMap<>(8);
+        for (Method declaredMethod : declaredMethods) {
+            ResponseEntityMode byFieldName = ResponseEntityMode.findByFieldName(declaredMethod.getName());
+            if (!byFieldName.equals(ResponseEntityMode.DEFAULT)) {
+                defaultValidResponseEntityField.put(declaredMethod.getName(), declaredMethod.getDefaultValue());
+            }
+        }
+        return defaultValidResponseEntityField;
     }
 
     @SuppressWarnings("unchecked")
@@ -164,6 +179,7 @@ public class VerifyInterpreterRegistry extends ApplicationObjectSupport implemen
                 packageList.addAll(Arrays.asList(annotation.scanBasePackages()));
             }
         }
+        packageList.add(VerifyResolverProxyFactory.class.getPackage().getName());
         return verifyPackageNameValidityAndSort(packageContextResolver(packageList), new LinkedList<>());
     }
 

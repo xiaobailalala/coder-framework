@@ -1,6 +1,6 @@
 package com.coder.framework.validate.support;
 
-import com.coder.framework.validate.resolver.AbstractVerifyProcess;
+import com.coder.framework.validate.handle.AbstractVerifyAdapter;
 
 import java.util.List;
 import java.util.Set;
@@ -35,28 +35,44 @@ import java.util.Set;
  */
 public interface AbstractVerifyRegistrySupport {
 
-    default AbstractVerifyProcess getVerifyProcess(Class<? extends AbstractVerifyProcess> verifyClazz) {
-        return VerifyRegistrySupport.getVerifyProcess(verifyClazz);
+    default AbstractVerifyAdapter getVerifyProcessTarget(Class<? extends AbstractVerifyAdapter> verifyClazz) {
+        return VerifyRegistrySupport.getVerifyProcessTarget(verifyClazz);
     }
 
-    default AbstractVerifyProcess getVerifyProcess(String verifyName) {
-        return VerifyRegistrySupport.getVerifyProcess(verifyName);
+    default AbstractVerifyAdapter getVerifyProcessTarget(String verifyName) {
+        return VerifyRegistrySupport.getVerifyProcessTarget(verifyName);
     }
 
-    default AbstractVerifyProcess registryVerifyProcess(String verifyName, AbstractVerifyProcess singletonObject) {
+    default AbstractVerifyAdapter getVerifyProcessProxy(Class<? extends AbstractVerifyAdapter> verifyClazz) {
+        return VerifyRegistrySupport.getVerifyProcessProxy(verifyClazz);
+    }
+
+    default AbstractVerifyAdapter getVerifyProcessProxy(String verifyName) {
+        return VerifyRegistrySupport.getVerifyProcessProxy(verifyName);
+    }
+
+    default AbstractVerifyAdapter registryVerifyProcess(String verifyName, AbstractVerifyAdapter singletonObject) {
         return VerifyRegistrySupport.registryVerifyProcess(verifyName, singletonObject);
     }
 
-    default void registryVerifyProcess(AbstractVerifyProcess singletonObject) {
+    default void registryVerifyProcess(AbstractVerifyAdapter singletonObject) {
         VerifyRegistrySupport.registryVerifyProcess(singletonObject);
     }
 
-    default Set<String> getVerifyProcessName() {
+    default Set<Class<? extends AbstractVerifyAdapter>> getVerifyProcessName() {
         return VerifyRegistrySupport.getVerifyProcessName();
     }
 
-    default List<AbstractVerifyProcess> getVerifyProcessInstance() {
-        return VerifyRegistrySupport.getVerifyProcessInstance();
+    default List<AbstractVerifyAdapter> getVerifyProcessTargetInstance() {
+        return VerifyRegistrySupport.getVerifyProcessTargetInstance();
+    }
+
+    default List<AbstractVerifyAdapter> getVerifyProcessProxyInstance() {
+        return VerifyRegistrySupport.getVerifyProcessProxyInstance();
+    }
+
+    default AbstractVerifyAdapter getTarget(AbstractVerifyAdapter proxy) {
+        return VerifyRegistrySupport.getTarget(proxy);
     }
 
 }

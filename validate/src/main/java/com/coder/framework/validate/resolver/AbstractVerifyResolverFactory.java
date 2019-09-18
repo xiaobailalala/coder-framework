@@ -1,19 +1,12 @@
 package com.coder.framework.validate.resolver;
 
-import com.coder.framework.validate.annotation.VerifyOrder;
-import com.coder.framework.validate.common.AbstractPackageScanner;
-import com.coder.framework.validate.exception.VerifyBaseException;
+import com.coder.framework.validate.handle.AbstractVerifyAdapter;
 import com.coder.framework.validate.support.AbstractVerifyRegistrySupport;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.reflect.MemberSignature;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.springframework.util.ObjectUtils;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Copyright © 2018 eSunny Info. Developer Stu. All rights reserved.
@@ -43,32 +36,34 @@ import java.util.stream.Collectors;
  * @version 1.0
  * @description
  */
-public abstract class AbstractVerifyResolverFactory implements AbstractVerifyRegistrySupport {
-
-    private List<AbstractVerifyProcess> abstractVerifyProcesses = new LinkedList<>();
-
-    /**
-     * The callback method after execution by the handler that parses the annotation
-     *
-     * @param throwable An exception is thrown if an exception occurs in the process of resolving the target
-     */
-    public abstract void processAndGetResult(RuntimeException throwable);
+class AbstractVerifyResolverFactory implements AbstractVerifyRegistrySupport {
 
     void createVerifyResolverFactory(JoinPoint joinPoint) {
-        for (AbstractVerifyProcess abstractVerifyProcess : getVerifyProcessInstance()) {
-            if (abstractVerifyProcess.methodFilter(((MethodSignature) joinPoint.getSignature()).getMethod(), joinPoint.getArgs())) {
-                this.abstractVerifyProcesses.add(abstractVerifyProcess);
+        Method targetMethod = ((MethodSignature) joinPoint.getSignature()).getMethod();
+        Object[] args = joinPoint.getArgs();
+        for (Object arg : args) {
+            Field[] fields = arg.getClass().getDeclaredFields();
+            if (fields.length == 0) {
+                resolverHandle(targetMethod, arg);
+                continue;
+            }
+            for (Field field : fields) {
+                boolean accessible = field.isAccessible();
+                field.setAccessible(true);
+                resolverHandle(targetMethod, arg, field);
+                field.setAccessible(accessible);
             }
         }
-        verifyResolverProcessor(joinPoint);
     }
 
-    private void verifyResolverProcessor(JoinPoint joinPoint) {
-        for (AbstractVerifyProcess abstractVerifyProcess : this.abstractVerifyProcesses) {
-            VerifyBaseException verifyBaseException = abstractVerifyProcess
-                    .coreProcessingMethod(joinPoint, this.abstractVerifyProcesses);
-            if (!ObjectUtils.isEmpty(verifyBaseException)) {
-                processAndGetResult(verifyBaseException);
+    private void resolverHandle(Method targetMethod, Object arg) {
+        resolverHandle(targetMethod, arg, null);
+    }
+
+    private void resolverHandle(Method targetMethod, Object arg, Field field) {
+        for (AbstractVerifyAdapter abstractVerifyAdapter : getVerifyProcessProxyInstance()) {
+            if (abstractVerifyAdapter.methodFilter(targetMethod, arg, field)) {
+                abstractVerifyAdapter.coreProcessingMethod(targetMethod, arg, field);
             }
         }
     }

@@ -35,6 +35,9 @@ import java.lang.annotation.*;
 @Documented
 public @interface VerifyNotNull {
 
-    String msg() default "";
+    /**
+     * The content of the exception response when the null condition is true
+     */
+    String value() default "The object must not be null";
 
 }

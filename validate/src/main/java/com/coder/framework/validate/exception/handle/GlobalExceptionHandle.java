@@ -1,4 +1,4 @@
-package com.coder.framework.validate.handle;
+package com.coder.framework.validate.exception.handle;
 
 import com.coder.framework.validate.common.ResponseBuilderManager;
 import com.coder.framework.validate.exception.verification.InvalidDataDefinitionException;
