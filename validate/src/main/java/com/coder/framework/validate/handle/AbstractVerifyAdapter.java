@@ -48,11 +48,11 @@ public interface AbstractVerifyAdapter {
 
     /**
      * On the basis of the former through the corresponding logic processing
-     * @param targetMethod Cut - through object method
+//     * @param targetMethod Cut - through object method
      * @param arg Cut - through object args
      * @param field Cut - through object args's fields
      * @return Returns a data validation exception captured during processing, or {@code null} if no exception exists
      */
-    VerifyBaseException coreProcessingMethod(Method targetMethod, Object arg, Field field);
+    VerifyBaseException coreProcessingMethod(Object arg, Field field);
 
 }

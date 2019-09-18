@@ -45,7 +45,7 @@ public class VerifyEntityHandle implements AbstractVerifyAdapter {
     }
 
     @Override
-    public VerifyBaseException coreProcessingMethod(Method method, Object arg, Field field) {
+    public VerifyBaseException coreProcessingMethod(Object arg, Field field) {
         return null;
     }
 }

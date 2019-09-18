@@ -63,7 +63,7 @@ class AbstractVerifyResolverFactory implements AbstractVerifyRegistrySupport {
     private void resolverHandle(Method targetMethod, Object arg, Field field) {
         for (AbstractVerifyAdapter abstractVerifyAdapter : getVerifyProcessProxyInstance()) {
             if (abstractVerifyAdapter.methodFilter(targetMethod, arg, field)) {
-                abstractVerifyAdapter.coreProcessingMethod(targetMethod, arg, field);
+                abstractVerifyAdapter.coreProcessingMethod(arg, field);
             }
         }
     }
