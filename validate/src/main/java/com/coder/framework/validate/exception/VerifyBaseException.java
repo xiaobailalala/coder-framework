@@ -1,5 +1,7 @@
 package com.coder.framework.validate.exception;
 
+import org.springframework.http.HttpStatus;
+
 /**
  * Copyright © 2018 eSunny Info. Developer Stu. All rights reserved.
  * <p>
@@ -30,7 +32,7 @@ package com.coder.framework.validate.exception;
  */
 public class VerifyBaseException extends RuntimeException {
 
-    private int status = 200;
+    private int status = HttpStatus.OK.value();
 
     public int getStatus() {
         return status;
