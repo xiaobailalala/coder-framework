@@ -4,10 +4,13 @@ import com.coder.framework.validate.adapter.handle.VerifyNotNullHandle;
 import com.coder.framework.validate.annotation.VerifyNotNull;
 import com.coder.framework.validate.annotation.VerifyOrder;
 import com.coder.framework.validate.exception.VerifyBaseException;
+import com.coder.framework.validate.util.CoreStaticUtil;
+import com.coder.framework.validate.util.MethodParameter;
 import org.springframework.util.ObjectUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
 
 /**
  * Copyright © 2018 eSunny Info. Developer Stu. All rights reserved.
@@ -41,19 +44,22 @@ import java.lang.reflect.Method;
 public class VerifyNotNullAdapterHandle implements AbstractVerifyAdapter {
 
     @Override
-    public boolean methodFilter(Method method, Object arg, Field field) {
-        return (!ObjectUtils.isEmpty(arg) && !ObjectUtils.isEmpty(arg.getClass().getDeclaredAnnotation(VerifyNotNull.class))) ||
-                (!ObjectUtils.isEmpty(field) && !ObjectUtils.isEmpty(field.getClass().getDeclaredAnnotation(VerifyNotNull.class)));
+    public boolean methodFilter(MethodParameter method, Object arg, Field field) {
+        if (method.hasParameterAnnotation(VerifyNotNull.class)) {
+            return true;
+        }
+        return !CoreStaticUtil.isPrimitive(arg) && !ObjectUtils.isEmpty(field) &&
+                field.isAnnotationPresent(VerifyNotNull.class);
     }
 
     @Override
     public VerifyBaseException coreProcessingMethod(AbstractVerifyResolverHandle handle) {
-        System.out.println(handle.arg);
+        System.out.println(handle.field);
         return handle.doResolver(handle.field);
     }
 
     @Override
-    public AbstractVerifyResolverHandle verifyHandleSupportFactory(Method targetMethod, Object arg, Field field) {
+    public AbstractVerifyResolverHandle verifyHandleSupportFactory(MethodParameter targetMethod, Object arg, Field field) {
         return new VerifyNotNullHandle(targetMethod, arg, field);
     }
 

@@ -110,8 +110,9 @@ public class VerifyInterpreterRegistry extends ApplicationObjectSupport implemen
                     }
                     responseEntity = checkResponseEntityValidity(enableVerifyResponseEntity, entity);
                 }
+            } else {
+                this.validResponseEntityField = getDefaultValidResponseEntityField();
             }
-            this.validResponseEntityField = getDefaultValidResponseEntityField();
         }
         if (ObjectUtils.isEmpty(responseEntity)) {
             responseEntity = ResponseEntity.class;
@@ -227,11 +228,11 @@ public class VerifyInterpreterRegistry extends ApplicationObjectSupport implemen
     }
 
     public Class<?> getResponseEntity() {
-        return responseEntity;
+        return this.responseEntity;
     }
 
     public Map<String, Object> getValidResponseEntityField() {
-        return validResponseEntityField;
+        return this.validResponseEntityField;
     }
 
     @Override

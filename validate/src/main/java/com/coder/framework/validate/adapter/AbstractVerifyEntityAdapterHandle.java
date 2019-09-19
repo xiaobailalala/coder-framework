@@ -2,6 +2,7 @@ package com.coder.framework.validate.adapter;
 
 import com.coder.framework.validate.annotation.VerifyOrder;
 import com.coder.framework.validate.exception.VerifyBaseException;
+import com.coder.framework.validate.util.MethodParameter;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -38,7 +39,7 @@ import java.lang.reflect.Method;
 public class AbstractVerifyEntityAdapterHandle implements AbstractVerifyAdapter {
 
     @Override
-    public boolean methodFilter(Method method, Object arg, Field field) {
+    public boolean methodFilter(MethodParameter method, Object arg, Field field) {
         return false;
     }
 
@@ -48,7 +49,7 @@ public class AbstractVerifyEntityAdapterHandle implements AbstractVerifyAdapter 
     }
 
     @Override
-    public AbstractVerifyResolverHandle verifyHandleSupportFactory(Method targetMethod, Object arg, Field field) {
+    public AbstractVerifyResolverHandle verifyHandleSupportFactory(MethodParameter targetMethod, Object arg, Field field) {
         return null;
     }
 }

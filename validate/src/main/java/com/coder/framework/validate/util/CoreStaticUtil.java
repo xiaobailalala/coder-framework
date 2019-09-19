@@ -1,10 +1,4 @@
-package com.coder.framework.validate.adapter.handle;
-
-import com.coder.framework.validate.adapter.AbstractVerifyResolverHandle;
-import com.coder.framework.validate.util.MethodParameter;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+package com.coder.framework.validate.util;
 
 /**
  * Copyright © 2018 eSunny Info. Developer Stu. All rights reserved.
@@ -30,18 +24,18 @@ import java.lang.reflect.Method;
  * 　　　┗┻┛　┗┻┛
  *
  * @author zpx
- * Build File @date: 2019/9/19 16:51
+ * Build File @date: 2019/9/19 19:21
  * @version 1.0
  * @description
  */
-public class VerifyNotNullHandle extends AbstractVerifyResolverHandle {
+public class CoreStaticUtil {
 
-    private VerifyNotNullHandle() {}
-
-    public VerifyNotNullHandle(MethodParameter targetMethod, Object arg, Field field) {
-        this.method = targetMethod;
-        this.arg = arg;
-        this.field = field;
+    public static boolean isPrimitive(Object obj) {
+        try {
+            return ((Class<?>)obj.getClass().getField("TYPE").get(null)).isPrimitive();
+        } catch (Exception e) {
+            return false;
+        }
     }
 
 }

@@ -51,12 +51,6 @@ public class VerifyCoreProcessorResolver {
         }
     }
 
-    private boolean isPrimitive(Object obj) {
-        try {
-            return ((Class<?>)obj.getClass().getField("TYPE").get(null)).isPrimitive();
-        } catch (Exception e) {
-            return false;
-        }
-    }
+
 
 }

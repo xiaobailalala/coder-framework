@@ -1,6 +1,7 @@
 package com.coder.framework.validate.adapter;
 
 import com.coder.framework.validate.exception.VerifyBaseException;
+import com.coder.framework.validate.util.MethodParameter;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -44,7 +45,7 @@ public interface AbstractVerifyAdapter {
      * @param field        Cut - through object args's fields
      * @return Returns true, executes the processor, otherwise does not
      */
-    boolean methodFilter(Method targetMethod, Object arg, Field field);
+    boolean methodFilter(MethodParameter targetMethod, Object arg, Field field);
 
     /**
      * On the basis of the former through the corresponding logic processing
@@ -58,6 +59,6 @@ public interface AbstractVerifyAdapter {
      * Exception handler
      * @return Exception handler
      */
-    AbstractVerifyResolverHandle verifyHandleSupportFactory(Method targetMethod, Object arg, Field field);
+    AbstractVerifyResolverHandle verifyHandleSupportFactory(MethodParameter targetMethod, Object arg, Field field);
 
 }

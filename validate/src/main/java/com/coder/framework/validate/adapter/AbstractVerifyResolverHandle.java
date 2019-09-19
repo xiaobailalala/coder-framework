@@ -2,6 +2,7 @@ package com.coder.framework.validate.adapter;
 
 import com.coder.framework.validate.exception.VerifyBaseException;
 import com.coder.framework.validate.exception.verification.InvalidDataDefinitionException;
+import com.coder.framework.validate.util.MethodParameter;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -37,7 +38,7 @@ import java.lang.reflect.Method;
 @SuppressWarnings("unused")
 public abstract class AbstractVerifyResolverHandle {
 
-    protected Method method;
+    protected MethodParameter method;
     protected Object arg;
     protected Field field;
     /**
