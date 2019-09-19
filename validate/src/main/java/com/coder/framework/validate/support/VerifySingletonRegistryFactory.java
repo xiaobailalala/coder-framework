@@ -2,7 +2,7 @@ package com.coder.framework.validate.support;
 
 import com.coder.framework.validate.exception.VerifyFrameworkRegistryException;
 import com.coder.framework.validate.proxy.dynamic.VerifyResolverProxyFactory;
-import com.coder.framework.validate.handle.AbstractVerifyAdapter;
+import com.coder.framework.validate.adapter.AbstractVerifyAdapter;
 import org.springframework.util.ObjectUtils;
 
 import java.util.LinkedHashSet;

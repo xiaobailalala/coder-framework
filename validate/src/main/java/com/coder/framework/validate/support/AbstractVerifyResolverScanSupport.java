@@ -2,7 +2,7 @@ package com.coder.framework.validate.support;
 
 import com.coder.framework.validate.annotation.VerifyOrder;
 import com.coder.framework.validate.common.AbstractPackageScanner;
-import com.coder.framework.validate.handle.AbstractVerifyAdapter;
+import com.coder.framework.validate.adapter.AbstractVerifyAdapter;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.coder.framework.validate.handle;
+package com.coder.framework.validate.adapter;
 
 import com.coder.framework.validate.annotation.VerifyOrder;
 import com.coder.framework.validate.exception.VerifyBaseException;
@@ -35,15 +35,20 @@ import java.lang.reflect.Method;
  * @description
  */
 @VerifyOrder(2)
-public class VerifyEntityAdapterHandle implements AbstractVerifyAdapter, VerifyResolverHandle {
+public class AbstractVerifyEntityAdapterHandle implements AbstractVerifyAdapter {
 
     @Override
     public boolean methodFilter(Method method, Object arg, Field field) {
-        return true;
+        return false;
     }
 
     @Override
-    public VerifyBaseException coreProcessingMethod(VerifyResolverHandle handle) {
+    public VerifyBaseException coreProcessingMethod(AbstractVerifyResolverHandle handle) {
+        return null;
+    }
+
+    @Override
+    public AbstractVerifyResolverHandle verifyHandleSupportFactory(Method targetMethod, Object arg, Field field) {
         return null;
     }
 }

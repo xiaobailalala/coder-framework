@@ -1,5 +1,6 @@
-package com.coder.framework.validate.handle;
+package com.coder.framework.validate.adapter;
 
+import com.coder.framework.validate.adapter.handle.VerifyNotNullHandle;
 import com.coder.framework.validate.annotation.VerifyNotNull;
 import com.coder.framework.validate.annotation.VerifyOrder;
 import com.coder.framework.validate.exception.VerifyBaseException;
@@ -37,17 +38,24 @@ import java.lang.reflect.Method;
  * @description
  */
 @VerifyOrder(1)
-public class VerifyNotNullAdapterHandle implements AbstractVerifyAdapter, VerifyResolverHandle {
+public class VerifyNotNullAdapterHandle implements AbstractVerifyAdapter {
 
     @Override
     public boolean methodFilter(Method method, Object arg, Field field) {
-//        (ObjectUtils.isEmpty(method) && !ObjectUtils.isEmpty(arg) && !ObjectUtils.isEmpty(arg.getClass().getDeclaredAnnotation(VerifyNotNull.class)))
-        return !ObjectUtils.isEmpty(arg.getClass().getDeclaredAnnotation(VerifyNotNull.class)) ||
-                !ObjectUtils.isEmpty(field.getClass().getDeclaredAnnotation(VerifyNotNull.class));
+        return (!ObjectUtils.isEmpty(arg) && !ObjectUtils.isEmpty(arg.getClass().getDeclaredAnnotation(VerifyNotNull.class))) ||
+                (!ObjectUtils.isEmpty(field) && !ObjectUtils.isEmpty(field.getClass().getDeclaredAnnotation(VerifyNotNull.class)));
     }
 
     @Override
-    public VerifyBaseException coreProcessingMethod(VerifyResolverHandle handle) {
-        return null;
+    public VerifyBaseException coreProcessingMethod(AbstractVerifyResolverHandle handle) {
+        System.out.println(handle.arg);
+        return handle.doResolver(handle.field);
     }
+
+    @Override
+    public AbstractVerifyResolverHandle verifyHandleSupportFactory(Method targetMethod, Object arg, Field field) {
+        return new VerifyNotNullHandle(targetMethod, arg, field);
+    }
+
+
 }

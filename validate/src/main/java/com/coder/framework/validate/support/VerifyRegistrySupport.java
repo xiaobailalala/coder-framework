@@ -1,6 +1,6 @@
 package com.coder.framework.validate.support;
 
-import com.coder.framework.validate.handle.AbstractVerifyAdapter;
+import com.coder.framework.validate.adapter.AbstractVerifyAdapter;
 
 import java.lang.reflect.Field;
 import java.util.*;

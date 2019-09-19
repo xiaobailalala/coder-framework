@@ -1,6 +1,6 @@
 package com.coder.framework.validate.proxy.cglib;
 
-import com.coder.framework.validate.handle.AbstractVerifyAdapter;
+import com.coder.framework.validate.adapter.AbstractVerifyAdapter;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;

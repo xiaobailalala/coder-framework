@@ -1,6 +1,6 @@
 package com.coder.framework.validate.config;
 
-import com.coder.framework.validate.handle.AbstractVerifyAdapter;
+import com.coder.framework.validate.adapter.AbstractVerifyAdapter;
 import com.coder.framework.validate.support.AbstractVerifyRegistrySupport;
 import com.coder.framework.validate.support.AbstractVerifyResolverScanSupport;
 
