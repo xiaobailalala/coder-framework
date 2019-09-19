@@ -1,11 +1,9 @@
 package com.coder.framework.validate.handle;
 
 import com.coder.framework.validate.exception.VerifyBaseException;
-import org.aspectj.lang.JoinPoint;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.List;
 
 /**
  * Copyright © 2018 eSunny Info. Developer Stu. All rights reserved.
@@ -35,6 +33,7 @@ import java.util.List;
  * @version 1.0
  * @description
  */
+@SuppressWarnings("all")
 public interface AbstractVerifyAdapter {
 
     /**
@@ -48,11 +47,9 @@ public interface AbstractVerifyAdapter {
 
     /**
      * On the basis of the former through the corresponding logic processing
-     * @param targetMethod Cut - through object method
-     * @param arg Cut - through object args
-     * @param field Cut - through object args's fields
+     * @param handle Exception core handler controller
      * @return Returns a data validation exception captured during processing, or {@code null} if no exception exists
      */
-    VerifyBaseException coreProcessingMethod(Method targetMethod, Object arg, Field field);
+    VerifyBaseException coreProcessingMethod(VerifyResolverHandle handle);
 
 }

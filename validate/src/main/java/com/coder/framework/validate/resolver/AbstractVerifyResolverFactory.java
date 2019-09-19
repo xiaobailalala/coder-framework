@@ -1,6 +1,8 @@
 package com.coder.framework.validate.resolver;
 
+import com.coder.framework.validate.exception.VerifyFrameworkRegistryException;
 import com.coder.framework.validate.handle.AbstractVerifyAdapter;
+import com.coder.framework.validate.handle.VerifyResolverHandle;
 import com.coder.framework.validate.support.AbstractVerifyRegistrySupport;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
@@ -39,19 +41,21 @@ import java.lang.reflect.Method;
 class AbstractVerifyResolverFactory implements AbstractVerifyRegistrySupport {
 
     void createVerifyResolverFactory(JoinPoint joinPoint) {
-        Method targetMethod = ((MethodSignature) joinPoint.getSignature()).getMethod();
-        Object[] args = joinPoint.getArgs();
-        for (Object arg : args) {
-            Field[] fields = arg.getClass().getDeclaredFields();
-            if (fields.length == 0) {
-                resolverHandle(targetMethod, arg);
-                continue;
-            }
-            for (Field field : fields) {
-                boolean accessible = field.isAccessible();
-                field.setAccessible(true);
-                resolverHandle(targetMethod, arg, field);
-                field.setAccessible(accessible);
+        if (checkResolver()) {
+            Method targetMethod = ((MethodSignature) joinPoint.getSignature()).getMethod();
+            Object[] args = joinPoint.getArgs();
+            for (Object arg : args) {
+                Field[] fields = arg.getClass().getDeclaredFields();
+                if (fields.length == 0) {
+                    resolverHandle(targetMethod, arg);
+                    continue;
+                }
+                for (Field field : fields) {
+                    boolean accessible = field.isAccessible();
+                    field.setAccessible(true);
+                    resolverHandle(targetMethod, arg, field);
+                    field.setAccessible(accessible);
+                }
             }
         }
     }
@@ -60,10 +64,21 @@ class AbstractVerifyResolverFactory implements AbstractVerifyRegistrySupport {
         resolverHandle(targetMethod, arg, null);
     }
 
+    private boolean checkResolver() {
+        for (AbstractVerifyAdapter abstractVerifyAdapter : getVerifyProcessProxyInstance()) {
+            if (!(abstractVerifyAdapter instanceof VerifyResolverHandle)) {
+                throw new VerifyFrameworkRegistryException("Parsing objects [" + abstractVerifyAdapter + "] requires " +
+                        "implement the [" + VerifyResolverHandle.class + "] interface");
+            }
+        }
+        return true;
+    }
+
+    @SuppressWarnings("all")
     private void resolverHandle(Method targetMethod, Object arg, Field field) {
         for (AbstractVerifyAdapter abstractVerifyAdapter : getVerifyProcessProxyInstance()) {
             if (abstractVerifyAdapter.methodFilter(targetMethod, arg, field)) {
-                abstractVerifyAdapter.coreProcessingMethod(targetMethod, arg, field);
+                abstractVerifyAdapter.coreProcessingMethod((VerifyResolverHandle) abstractVerifyAdapter);
             }
         }
     }
