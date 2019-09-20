@@ -140,7 +140,7 @@ public abstract class AbstractVerifyResolverHandle {
 
     protected VerifyBaseException executeAndThrow(VerifyBaseException... exception) {
         for (VerifyBaseException verifyBaseException : exception) {
-            if (ObjectUtils.isEmpty(verifyBaseException)) {
+            if (!ObjectUtils.isEmpty(verifyBaseException)) {
                 return verifyBaseException;
             }
         }

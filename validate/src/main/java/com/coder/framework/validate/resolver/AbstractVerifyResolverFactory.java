@@ -7,6 +7,7 @@ import com.coder.framework.validate.support.AbstractVerifyRegistrySupport;
 import com.coder.framework.validate.util.MethodParameter;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.util.ObjectUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -45,6 +46,10 @@ class AbstractVerifyResolverFactory implements AbstractVerifyRegistrySupport {
         Method targetMethod = ((MethodSignature) joinPoint.getSignature()).getMethod();
         Object[] args = joinPoint.getArgs();
         for (int index = 0; index < args.length; index++) {
+            if (ObjectUtils.isEmpty(args[index])) {
+                resolverHandle(new MethodParameter(targetMethod, index), args[index]);
+                continue;
+            }
             Field[] fields = args[index].getClass().getDeclaredFields();
             if (fields.length == 0) {
                 resolverHandle(new MethodParameter(targetMethod, index), args[index]);

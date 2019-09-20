@@ -52,7 +52,8 @@ public class VerifyNotNullAdapterHandle implements AbstractVerifyAdapter {
 
     @Override
     public VerifyBaseException coreProcessingMethod(AbstractVerifyResolverHandle handle) {
-        return handle.executeAndThrow();
+        return handle.executeAndThrow(handle.doResolver(handle.method, handle.arg),
+                handle.doResolver(handle.arg, handle.field));
     }
 
     @Override
