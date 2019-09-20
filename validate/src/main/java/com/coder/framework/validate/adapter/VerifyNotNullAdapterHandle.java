@@ -9,8 +9,6 @@ import com.coder.framework.validate.util.MethodParameter;
 import org.springframework.util.ObjectUtils;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.lang.reflect.Parameter;
 
 /**
  * Copyright © 2018 eSunny Info. Developer Stu. All rights reserved.
@@ -54,8 +52,7 @@ public class VerifyNotNullAdapterHandle implements AbstractVerifyAdapter {
 
     @Override
     public VerifyBaseException coreProcessingMethod(AbstractVerifyResolverHandle handle) {
-        System.out.println(handle.field);
-        return handle.doResolver(handle.field);
+        return handle.executeAndThrow();
     }
 
     @Override

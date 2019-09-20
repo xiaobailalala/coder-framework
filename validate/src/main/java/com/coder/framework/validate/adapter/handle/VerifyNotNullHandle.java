@@ -1,7 +1,12 @@
 package com.coder.framework.validate.adapter.handle;
 
 import com.coder.framework.validate.adapter.AbstractVerifyResolverHandle;
+import com.coder.framework.validate.annotation.VerifyNotNull;
+import com.coder.framework.validate.exception.VerifyBaseException;
+import com.coder.framework.validate.exception.verification.InvalidDataDefinitionException;
 import com.coder.framework.validate.util.MethodParameter;
+import com.sun.xml.internal.ws.api.model.MEP;
+import org.springframework.util.ObjectUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -36,12 +41,18 @@ import java.lang.reflect.Method;
  */
 public class VerifyNotNullHandle extends AbstractVerifyResolverHandle {
 
-    private VerifyNotNullHandle() {}
-
     public VerifyNotNullHandle(MethodParameter targetMethod, Object arg, Field field) {
-        this.method = targetMethod;
-        this.arg = arg;
-        this.field = field;
+        super(targetMethod, arg, field);
     }
 
+    @Override
+    protected VerifyBaseException doResolver(MethodParameter method, Object arg) {
+        if (method.hasParameterAnnotation(VerifyNotNull.class)) {
+            if (ObjectUtils.isEmpty(arg)) {
+                VerifyNotNull verifyNotNull = method.getParameter().getAnnotation(VerifyNotNull.class);
+                return new InvalidDataDefinitionException(verifyNotNull.value());
+            }
+        }
+        return super.doResolver(method, arg);
+    }
 }

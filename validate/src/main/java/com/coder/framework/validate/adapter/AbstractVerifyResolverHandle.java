@@ -3,6 +3,7 @@ package com.coder.framework.validate.adapter;
 import com.coder.framework.validate.exception.VerifyBaseException;
 import com.coder.framework.validate.exception.verification.InvalidDataDefinitionException;
 import com.coder.framework.validate.util.MethodParameter;
+import org.springframework.util.ObjectUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -41,6 +42,13 @@ public abstract class AbstractVerifyResolverHandle {
     protected MethodParameter method;
     protected Object arg;
     protected Field field;
+
+    public AbstractVerifyResolverHandle(MethodParameter targetMethod, Object arg, Field field) {
+        this.method = targetMethod;
+        this.arg = arg;
+        this.field = field;
+    }
+
     /**
      * Specifies the execution scheme for the validation controller,
      * and the method can be selected based on the valid parameters provided
@@ -51,7 +59,7 @@ public abstract class AbstractVerifyResolverHandle {
      * @return Check the exception {@link InvalidDataDefinitionException} generated during the process,
      * check the exception specifically, and return {@code null} if there is no exception in the processing result
      */
-    protected VerifyBaseException doResolver(Method method, Object arg, Field field) {
+    protected VerifyBaseException doResolver(MethodParameter method, Object arg, Field field) {
         return null;
     }
 
@@ -63,7 +71,7 @@ public abstract class AbstractVerifyResolverHandle {
      * @return Check the exception {@link InvalidDataDefinitionException} generated during the process,
      * check the exception specifically, and return {@code null} if there is no exception in the processing result
      */
-    protected VerifyBaseException doResolver(Method method) {
+    protected VerifyBaseException doResolver(MethodParameter method) {
         return null;
     }
 
@@ -100,7 +108,7 @@ public abstract class AbstractVerifyResolverHandle {
      * @return Check the exception {@link InvalidDataDefinitionException} generated during the process,
      * check the exception specifically, and return {@code null} if there is no exception in the processing result
      */
-    protected VerifyBaseException doResolver(Method method, Object arg) {
+    protected VerifyBaseException doResolver(MethodParameter method, Object arg) {
         return null;
     }
 
@@ -113,7 +121,7 @@ public abstract class AbstractVerifyResolverHandle {
      * @return Check the exception {@link InvalidDataDefinitionException} generated during the process,
      * check the exception specifically, and return {@code null} if there is no exception in the processing result
      */
-    protected VerifyBaseException doResolver(Method method, Field field) {
+    protected VerifyBaseException doResolver(MethodParameter method, Field field) {
         return null;
     }
 
@@ -127,6 +135,15 @@ public abstract class AbstractVerifyResolverHandle {
      * check the exception specifically, and return {@code null} if there is no exception in the processing result
      */
     protected VerifyBaseException doResolver(Object arg, Field field) {
+        return null;
+    }
+
+    protected VerifyBaseException executeAndThrow(VerifyBaseException... exception) {
+        for (VerifyBaseException verifyBaseException : exception) {
+            if (ObjectUtils.isEmpty(verifyBaseException)) {
+                return verifyBaseException;
+            }
+        }
         return null;
     }
 

@@ -36,7 +36,7 @@ import java.lang.reflect.Method;
  * @description
  */
 @VerifyOrder(2)
-public class AbstractVerifyEntityAdapterHandle implements AbstractVerifyAdapter {
+public class VerifyEntityAdapterHandle implements AbstractVerifyAdapter {
 
     @Override
     public boolean methodFilter(MethodParameter method, Object arg, Field field) {

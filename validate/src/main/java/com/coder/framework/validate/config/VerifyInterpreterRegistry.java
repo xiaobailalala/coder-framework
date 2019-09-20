@@ -109,9 +109,9 @@ public class VerifyInterpreterRegistry extends ApplicationObjectSupport implemen
                                 ", then the annotation [VerifyResponseEntity] must be declared at the same level.");
                     }
                     responseEntity = checkResponseEntityValidity(enableVerifyResponseEntity, entity);
+                } else {
+                    this.validResponseEntityField = getDefaultValidResponseEntityField();
                 }
-            } else {
-                this.validResponseEntityField = getDefaultValidResponseEntityField();
             }
         }
         if (ObjectUtils.isEmpty(responseEntity)) {
