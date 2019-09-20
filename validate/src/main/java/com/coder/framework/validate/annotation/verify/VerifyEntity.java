@@ -1,4 +1,4 @@
-package com.coder.framework.validate.annotation;
+package com.coder.framework.validate.annotation.verify;
 
 import java.lang.annotation.*;
 

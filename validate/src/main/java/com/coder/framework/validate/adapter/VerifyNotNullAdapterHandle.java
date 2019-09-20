@@ -1,7 +1,8 @@
 package com.coder.framework.validate.adapter;
 
 import com.coder.framework.validate.adapter.handle.VerifyNotNullHandle;
-import com.coder.framework.validate.annotation.VerifyNotNull;
+import com.coder.framework.validate.annotation.verify.VerifyEntity;
+import com.coder.framework.validate.annotation.verify.VerifyNotNull;
 import com.coder.framework.validate.annotation.VerifyOrder;
 import com.coder.framework.validate.exception.VerifyBaseException;
 import com.coder.framework.validate.util.CoreStaticUtil;
@@ -46,13 +47,16 @@ public class VerifyNotNullAdapterHandle implements AbstractVerifyAdapter {
         if (method.hasParameterAnnotation(VerifyNotNull.class)) {
             return true;
         }
-        return !CoreStaticUtil.isPrimitive(arg) && !ObjectUtils.isEmpty(field) &&
+        return !CoreStaticUtil.isPrimitive(arg) &&
+                arg.getClass().isAnnotationPresent(VerifyEntity.class) &&
+                !ObjectUtils.isEmpty(field) &&
                 field.isAnnotationPresent(VerifyNotNull.class);
     }
 
     @Override
     public VerifyBaseException coreProcessingMethod(AbstractVerifyResolverHandle handle) {
-        return handle.executeAndThrow(handle.doResolver(handle.method, handle.arg),
+        return handle.executeAndThrow(
+                handle.doResolver(handle.method, handle.arg),
                 handle.doResolver(handle.arg, handle.field));
     }
 

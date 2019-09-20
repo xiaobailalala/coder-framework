@@ -1,7 +1,7 @@
 package com.coder.framework.validate.adapter.handle;
 
 import com.coder.framework.validate.adapter.AbstractVerifyResolverHandle;
-import com.coder.framework.validate.annotation.VerifyNotNull;
+import com.coder.framework.validate.annotation.verify.VerifyNotNull;
 import com.coder.framework.validate.exception.VerifyBaseException;
 import com.coder.framework.validate.exception.verification.InvalidDataDefinitionException;
 import com.coder.framework.validate.util.MethodParameter;
